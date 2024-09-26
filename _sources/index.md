@@ -1,4 +1,4 @@
-# Welcome to Dig4Bio workshop hub
+# Welcome the Dig4Bio workshops
 
 This is a small sample book to give you a feel for how book content is
 structured.
