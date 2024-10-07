@@ -1,11 +1,30 @@
 # Welcome the Dig4Bio workshops
 
 
-This GitHub page contains the materials used for the *Dig*italization of *Bio*manufacturing (Dig4Bio)
+This GitHub page contains the materials used for the **Dig**italization of **Bio**manufacturing (Dig4Bio)
 workshops.
 
 
-For more information about Dig4bio
+For more information about Dig4bio visit this [link](https://ibb.tecnico.ulisboa.pt/portfolio/dig4bio/)
+
+For the latest news and updates follow the [LinkedIn page](https://www.linkedin.com/company/dig4bio/posts/?feedView=all)
+
+## Partners
+
+
+
+[//]: # (<p float="left">)
+
+[//]: # (  <img src="logos/tuberlin_logo.png" alt="Image 1" width="200" />)
+
+[//]: # (  <img src="logos/ist-id_logo.png" alt="Image 2" width="200" />)
+
+[//]: # (</p>)
+
+
+
+
+
 This is a small sample book to give you a feel for how book content is
 structured.
 

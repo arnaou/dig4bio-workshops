@@ -175,19 +175,23 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../../index.html">
-                    Welcome to Dig4Bio workshop hub
+                    Welcome the Dig4Bio workshops
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Python</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">WS1 Introduction to Python</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="0_python_basics.html">1. Python Basics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro_to_ws1.html">Introduction to WS1</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="0_python_basics.html">Python Basics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="1_introduction.html">1.7. Chemical Reaction Engineering in Python</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">1.8. Hello, World!</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3_statements.html">1.9. Statements and Packaging</a></li>
-<li class="toctree-l2"><a class="reference internal" href="4_control_flow.html">1.10. Conditionality and Repetition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_control_flow.html">Conditionality and Repetition</a></li>
 </ul>
 </details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">WS2 - Modelling</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../notebooks.html">2. Content with notebooks</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../markdown-notebooks.html">3. Notebooks with MyST Markdown</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../mymarkdownfile.html">3.1. Here’s my sample title</a></li>
@@ -438,7 +442,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="hello-world">
-<h1><span class="section-number">1.8. </span>Hello, World!<a class="headerlink" href="#hello-world" title="Link to this heading">#</a></h1>
+<h1>Hello, World!<a class="headerlink" href="#hello-world" title="Link to this heading">#</a></h1>
 <p>Traditionally, Hello World programs are used to illustrate how coding works, as well as to verify that the system is operating correctly.
 Greeting the user is considered the first step in learning to code, and it even has its own Wikipedia page!
 So, let’s do that.</p>
@@ -455,7 +459,7 @@ So, let’s do that.</p>
 </div>
 </div>
 <section id="syntax-semantics-and-pragmatics-of-a-programming-language">
-<h2><span class="section-number">1.8.1. </span>Syntax, Semantics and Pragmatics of a programming language<a class="headerlink" href="#syntax-semantics-and-pragmatics-of-a-programming-language" title="Link to this heading">#</a></h2>
+<h2>Syntax, Semantics and Pragmatics of a programming language<a class="headerlink" href="#syntax-semantics-and-pragmatics-of-a-programming-language" title="Link to this heading">#</a></h2>
 <p>Before starting to code, there are some notions that we need to understand.</p>
 <p>First of all, Python is regarded as a <em>programming language</em>.
 But what does that mean?
@@ -469,7 +473,7 @@ A language, in order to be successful in enabling communication and understandin
 <li><p><strong>Pragmatics</strong>: defines how context contributes to the meaning of a sentence. Humans are able to infer much information from the context, enabling them to infer the meaning from a set of shared assumptions, even though not all details are explicit. Computer programs are unable to do the same, and can only do what instructed. But this is not necessarily a bad attribute, since it means that there is no ambiguity: a piece of code can have one and only one interpretation, while natural language can often be ambiguous. If a program encounters potentially ambiguous statements, preference rules are employed to select a single interpretation. An example of this is given by mathematical operations.</p></li>
 </ul>
 <section id="syntax">
-<h3><span class="section-number">1.8.1.1. </span>Syntax<a class="headerlink" href="#syntax" title="Link to this heading">#</a></h3>
+<h3>Syntax<a class="headerlink" href="#syntax" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example of a correct statement</span>
@@ -505,7 +509,7 @@ second
 </div>
 </section>
 <section id="semantics">
-<h3><span class="section-number">1.8.1.2. </span>Semantics<a class="headerlink" href="#semantics" title="Link to this heading">#</a></h3>
+<h3>Semantics<a class="headerlink" href="#semantics" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Division by zero</span>
@@ -575,7 +579,7 @@ second
 <p>The error above indicates that <code class="docutils literal notranslate"><span class="pre">my_function()</span></code> is not defined.</p>
 </section>
 <section id="pragmatics">
-<h3><span class="section-number">1.8.1.3. </span>Pragmatics<a class="headerlink" href="#pragmatics" title="Link to this heading">#</a></h3>
+<h3>Pragmatics<a class="headerlink" href="#pragmatics" title="Link to this heading">#</a></h3>
 <p>Before running the following cell, can you guess what operation will be done first?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -595,7 +599,7 @@ second
 </section>
 </section>
 <section id="a-foolish-consistency-is-the-hobgoblin-of-little-minds">
-<h2><span class="section-number">1.8.2. </span>“A Foolish Consistency is the Hobgoblin of Little Minds”<a class="headerlink" href="#a-foolish-consistency-is-the-hobgoblin-of-little-minds" title="Link to this heading">#</a></h2>
+<h2>“A Foolish Consistency is the Hobgoblin of Little Minds”<a class="headerlink" href="#a-foolish-consistency-is-the-hobgoblin-of-little-minds" title="Link to this heading">#</a></h2>
 <p>-Ralph Waldo Emerson, Self-Reliance</p>
 <p>Programmers are very opinionated people, which means that they will probably have a strong preference for how to define variables, functions and classes, and so on.</p>
 <p><a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">Here</a> you can find the Holy Grail of Python formatting style.</p>
