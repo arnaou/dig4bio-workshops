@@ -1,10 +1,10 @@
-# Welcome to the Dig4Bio workshops
+# Welcome to Dig4Bio workshops
 
 
 This GitHub page contains the materials used for the **Dig**italization of **Bio**manufacturing (Dig4Bio)
 workshops.
 
-<img src="logos/dig4bio_v2.png" 
+<img src="media/logo/dig4bio_v2.png" 
         alt="Picture" 
         width="600" 
         height="400" 

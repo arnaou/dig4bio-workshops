@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'WS1/0_python_basics/2_statements';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="2.9. Conditionality and Repetition" href="3_control_flow.html" />
+    <link rel="next" title="Conditionality and Repetition" href="3_control_flow.html" />
     <link rel="prev" title="2.7. Hello, World!" href="1_hello_world.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -177,7 +177,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../../index.html">
-                    Welcome the Dig4Bio workshops
+                    Welcome to Dig4Bio workshops
                 </a>
             </li>
         </ul>
@@ -187,7 +187,7 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="0_python_basics.html">2. Python Basics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="1_hello_world.html">2.7. Hello, World!</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">2.8. Statements and Packaging</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3_control_flow.html">2.9. Conditionality and Repetition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_control_flow.html">Conditionality and Repetition</a></li>
 </ul>
 </details></li>
 </ul>
@@ -452,7 +452,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="statements-and-packaging">
-<h1><span class="section-number">2.8. </span>Statements and Packaging<a class="headerlink" href="#statements-and-packaging" title="Link to this heading">#</a></h1>
+<h1>Statements and Packaging<a class="headerlink" href="#statements-and-packaging" title="Link to this heading">#</a></h1>
 <p>A <strong>statement</strong> is an instruction that your program can execute.
 In Python, you can compute, bind, or save values in different ways.</p>
 <p>Some of the most common ways are:</p>
@@ -464,7 +464,7 @@ In Python, you can compute, bind, or save values in different ways.</p>
 <li><p><strong>Packaging</strong>, for reusing chunks of code.</p></li>
 </ol>
 <section id="simple-statement">
-<h2><span class="section-number">2.8.1. </span>1. Simple statement<a class="headerlink" href="#simple-statement" title="Link to this heading">#</a></h2>
+<h2>1. Simple statement<a class="headerlink" href="#simple-statement" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># statement 1</span>
@@ -523,7 +523,7 @@ glucose
 </div>
 </section>
 <section id="assignment-statement">
-<h2><span class="section-number">2.8.2. </span>2. Assignment statement<a class="headerlink" href="#assignment-statement" title="Link to this heading">#</a></h2>
+<h2>2. Assignment statement<a class="headerlink" href="#assignment-statement" title="Link to this heading">#</a></h2>
 <p>Assigning values to variables allows reusing a variable.
 We use <code class="docutils literal notranslate"><span class="pre">=</span></code> to bind a value to a variable.
 Assigning a value to a variable is useful to write more clear and concise code since we can now use our variable everywhere the value (or simple statement) would go.</p>
@@ -654,7 +654,7 @@ id<span class="o">?</span>
 <p>As you can see, now <code class="docutils literal notranslate"><span class="pre">temperatures</span></code> contains different values than in cell 7.</p>
 </section>
 <section id="lists-and-generators">
-<h2><span class="section-number">2.8.3. </span>3. Lists and generators<a class="headerlink" href="#lists-and-generators" title="Link to this heading">#</a></h2>
+<h2>3. Lists and generators<a class="headerlink" href="#lists-and-generators" title="Link to this heading">#</a></h2>
 <p>We will deep dive into lists and other types of data structures next week, for now, the only notion that you need to acquire is that items can be assigned to lists in multiple ways, e.g., <em>manually</em> (which we want to avoid since programming is all about automation), using a <em>loop</em> or through a <em>list comprehension</em>.</p>
 <p>In the following examples, we will use different techniques to create <code class="docutils literal notranslate"><span class="pre">list_gallons</span></code>.</p>
 <div class="cell docutils container">
@@ -780,13 +780,13 @@ The disadvantage of this approach is that you can only use a generator created i
 Generators don’t construct a list object, so instead of storing the whole list in memory, they generate one item at a time and generate the next only when in demand. On the other hand, in a list comprehension, memory is reserved for the whole list. Additionally, generators are also more time efficient than list comprehensions.</p>
 </section>
 <section id="compound-statement">
-<h2><span class="section-number">2.8.4. </span>4. Compound statement<a class="headerlink" href="#compound-statement" title="Link to this heading">#</a></h2>
+<h2>4. Compound statement<a class="headerlink" href="#compound-statement" title="Link to this heading">#</a></h2>
 <p>Compound statements are more complex statements that allow code in Python to be run according to a logic or order.
 They allow code to be run conditionally, i.e., expressions are evaluated one by one until one is found to be true; or repeatedly, i.e., code runs until a condition is satisfied (as long as the expression is true or iteration over given data structure is over). The two most widely used compound statements are <strong>if statements</strong> and <strong>loops</strong>.</p>
 <p>Here, we will go through the basics of compound statements, which will be explored in more detail in the next Notebook <em>5-Control Flow</em>.</p>
 <p>For more resources, check out the documentation <a class="reference external" href="https://docs.python.org/3/reference/compound_stmts.html">here</a>.</p>
 <section id="if-statement">
-<h3><span class="section-number">2.8.4.1. </span><strong>if statement</strong><a class="headerlink" href="#if-statement" title="Link to this heading">#</a></h3>
+<h3><strong>if statement</strong><a class="headerlink" href="#if-statement" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">statement</span></code> is used for conditional execution.</p>
 <p>In plain language, an <code class="docutils literal notranslate"><span class="pre">if-else</span></code> clause tells Python to run the code in order.</p>
 <ul class="simple">
@@ -840,7 +840,7 @@ They allow code to be run conditionally, i.e., expressions are evaluated one by 
 </div>
 </section>
 <section id="loops">
-<h3><span class="section-number">2.8.4.2. </span><strong>loops</strong><a class="headerlink" href="#loops" title="Link to this heading">#</a></h3>
+<h3><strong>loops</strong><a class="headerlink" href="#loops" title="Link to this heading">#</a></h3>
 <p>There are two types of loops used in Python: <code class="docutils literal notranslate"><span class="pre">for</span></code> and <code class="docutils literal notranslate"><span class="pre">while</span></code> loops.</p>
 <p>Before looking at the cells below, can you guess the difference between a <code class="docutils literal notranslate"><span class="pre">for</span></code> and a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop?</p>
 <div class="cell docutils container">
@@ -852,7 +852,7 @@ They allow code to be run conditionally, i.e., expressions are evaluated one by 
 </div>
 </div>
 <section id="for-loop">
-<h4><span class="section-number">2.8.4.2.1. </span>for loop<a class="headerlink" href="#for-loop" title="Link to this heading">#</a></h4>
+<h4>for loop<a class="headerlink" href="#for-loop" title="Link to this heading">#</a></h4>
 <p>Python syntax for the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="o">&lt;</span><span class="n">target_list</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">expression_list</span><span class="o">&gt;</span><span class="p">:</span>
 <span class="err">⇥</span> <span class="o">&lt;</span><span class="n">suite</span><span class="o">&gt;</span>
@@ -888,7 +888,7 @@ solid-liquid extraction
 </div>
 </section>
 <section id="while-loop">
-<h4><span class="section-number">2.8.4.2.2. </span>while loop<a class="headerlink" href="#while-loop" title="Link to this heading">#</a></h4>
+<h4>while loop<a class="headerlink" href="#while-loop" title="Link to this heading">#</a></h4>
 <p>Python syntax for the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="o">&lt;</span><span class="n">condition</span><span class="o">&gt;</span><span class="p">:</span>
 <span class="err">⇥</span> <span class="o">&lt;</span><span class="n">suite</span><span class="o">&gt;</span>
@@ -928,12 +928,12 @@ Only 2 experiments left:  [&#39;Bubble column&#39;, &#39;Fluid bed&#39;]
 </section>
 </section>
 <section id="packaging">
-<h2><span class="section-number">2.8.5. </span>5. Packaging<a class="headerlink" href="#packaging" title="Link to this heading">#</a></h2>
+<h2>5. Packaging<a class="headerlink" href="#packaging" title="Link to this heading">#</a></h2>
 <p>“Packaging” your code into functions will enable you to organize and reuse code, and it makes it easy to maintain and update.</p>
 <p>A function is defined using the syntax below. It needs to be preceded by ‘def’, it needs to be assigned a name (e.g., bar_to_pascal) and it allows you to provide some arguments (bar).
 “Calling the function” executes the wrapped code using the input arguments.</p>
 <section id="functions">
-<h3><span class="section-number">2.8.5.1. </span>Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h3>
+<h3>Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define a function that can be reused in the future</span>
@@ -1115,7 +1115,7 @@ Than we would have to copy all the code and change the initial concentration var
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2.9. </span>Conditionality and Repetition</p>
+        <p class="prev-next-title">Conditionality and Repetition</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
