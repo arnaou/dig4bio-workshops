@@ -14,6 +14,10 @@ kernelspec:
 
 # Notebooks with MyST Markdown
 
+```{tableofcontents}
+```
+
+
 Jupyter Book also lets you write text-based notebooks using MyST Markdown.
 See [the Notebooks with MyST Markdown documentation](https://jupyterbook.org/file-types/myst-notebooks.html) for more detailed instructions.
 This page shows off a notebook written in MyST Markdown.
@@ -51,3 +55,5 @@ If you have a markdown file and you'd like to quickly add YAML metadata to it, s
 ```
 jupyter-book myst init path/to/markdownfile.md
 ```
+
+

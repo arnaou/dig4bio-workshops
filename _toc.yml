@@ -2,9 +2,25 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: intro
-chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
-- file: mymarkdownfile
+root: index
+options:  # The options key will be applied to all chapters, but not sub-sections
+  numbered: False
+parts:
+  - caption: Introduction to Python (WS1)
+    numbered: False  # Only applies to chapters in Part 1.
+    chapters:
+    - file: WS1/intro_to_ws1
+      title: Intro to WS1
+    - file: WS1/0_python_basics/0_python_basics
+      title: Python Basics
+      sections:
+      - file: WS1/0_python_basics/1_hello_world
+      - file: WS1/0_python_basics/2_statements
+      - file: WS1/0_python_basics/3_control_flow
+  - caption: WS2 - Modelling
+    chapters:
+    - file: notebooks
+    - file: markdown-notebooks
+      sections:
+      - file: mymarkdownfile
+
