@@ -3,21 +3,24 @@
 
 format: jb-book
 root: index
-options:  # The options key will be applied to all chapters, but not sub-sections
-  numbered: False
+options:
+  numbered: false
 parts:
   - caption: Introduction to Python (WS1)
-    numbered: False  # Only applies to chapters in Part 1.
+    numbered: False
     chapters:
     - file: WS1/intro_to_ws1
-      title: Intro to WS1
+      title: Introduction to workshop 1
     - file: WS1/0_python_basics/0_python_basics
       title: Python Basics
-      sections:
-      - file: WS1/0_python_basics/1_hello_world
-      - file: WS1/0_python_basics/2_statements
-      - file: WS1/0_python_basics/3_control_flow
-  - caption: WS2 - Modelling
+    - file: WS1/0_python_basics/1_hello_world
+      title: Hello World
+    - file: WS1/0_python_basics/2_statements
+      title: Statements
+    - file: WS1/0_python_basics/3_control_flow
+      title: Control flow
+
+  - caption: Model-based Techniques (WS2)
     chapters:
     - file: notebooks
     - file: markdown-notebooks

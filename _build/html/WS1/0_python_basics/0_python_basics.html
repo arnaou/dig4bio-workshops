@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>2. Introduction to Python &#8212; Dig4Bio-workshops</title>
+    <title>Introduction to Python &#8212; Dig4Bio-workshops</title>
   
   
   
@@ -57,13 +57,11 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'WS1/0_python_basics/0_python_basics';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="2.7. Hello, World!" href="1_hello_world.html" />
-    <link rel="prev" title="1. Introduction to Python" href="../intro_to_ws1.html" />
+    <link rel="prev" title="Introduction to Python" href="../intro_to_ws1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -183,15 +181,13 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Python (WS1)</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../intro_to_ws1.html">1. Intro to WS1</a></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">2. Python Basics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="1_hello_world.html">2.7. Hello, World!</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2_statements.html">2.8. Statements and Packaging</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3_control_flow.html">Conditionality and Repetition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro_to_ws1.html">Intro to WS1</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Python Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_hello_world.html">2.7. Hello, World!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_statements.html">2.8. Statements and Packaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_control_flow.html">Conditionality and Repetition</a></li>
 </ul>
-</details></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">WS2 - Modelling</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Model-based Techniques (WS2)</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../notebooks.html">Content with notebooks</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../markdown-notebooks.html">Notebooks with MyST Markdown</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -252,7 +248,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/docs/WS1/0_python_basics/0_python_basics.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/arnaou/dig4bio-workshops/blob/master/docs/WS1/0_python_basics/0_python_basics.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -283,7 +279,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+      <li><a href="https://github.com/arnaou/dig4bio-workshops" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -300,7 +296,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FWS1/0_python_basics/0_python_basics.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/arnaou/dig4bio-workshops/issues/new?title=Issue%20on%20page%20%2FWS1/0_python_basics/0_python_basics.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -424,12 +420,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objective">2.1. Objective</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">2.2. Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-python">2.3. Why Python?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schedule">2.4. Schedule</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives-master-the-python-s-syntax-familiarize-with-arithmetic-operations-assignment-and-compound-statements">2.5. Learning Objectives- Master the Python’s syntax, familiarize with arithmetic operations, assignment and compound statements.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#helpful-tips-and-tricks-before-starting">2.6. Helpful tips and tricks before starting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objective">Objective</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-python">Why Python?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schedule">Schedule</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives-master-the-python-s-syntax-familiarize-with-arithmetic-operations-assignment-and-compound-statements">Learning Objectives- Master the Python’s syntax, familiarize with arithmetic operations, assignment and compound statements.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#helpful-tips-and-tricks-before-starting">Helpful tips and tricks before starting</a></li>
 </ul>
             </nav>
         </div>
@@ -509,8 +505,6 @@ It is the to-go language for data analysis and data science, both in academia an
 <p>this course has been taken and adapted from The course <a class="reference external" href="https://github.com/FiammettaC/Chemical-Reaction-Engineering-in-Python"><em>Chemical Reaction engineering in Python</em></a> by Fiammetta Caccavale.</p>
 </div>
 </section>
-<div class="toctree-wrapper compound">
-</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -549,7 +543,7 @@ It is the to-go language for data analysis and data science, both in academia an
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>Introduction to Python</p>
+        <p class="prev-next-title">Introduction to Python</p>
       </div>
     </a>
     <a class="right-next"
@@ -577,12 +571,12 @@ It is the to-go language for data analysis and data science, both in academia an
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objective">2.1. Objective</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">2.2. Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-python">2.3. Why Python?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schedule">2.4. Schedule</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives-master-the-python-s-syntax-familiarize-with-arithmetic-operations-assignment-and-compound-statements">2.5. Learning Objectives- Master the Python’s syntax, familiarize with arithmetic operations, assignment and compound statements.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#helpful-tips-and-tricks-before-starting">2.6. Helpful tips and tricks before starting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objective">Objective</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-python">Why Python?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schedule">Schedule</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives-master-the-python-s-syntax-familiarize-with-arithmetic-operations-assignment-and-compound-statements">Learning Objectives- Master the Python’s syntax, familiarize with arithmetic operations, assignment and compound statements.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#helpful-tips-and-tricks-before-starting">Helpful tips and tricks before starting</a></li>
 </ul>
   </nav></div>
 
