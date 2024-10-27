@@ -1,8 +1,9 @@
-# Welcome to Dig4Bio workshops
+# Dig4Bio workshops
 
 
-This GitHub page contains the materials used for the **Dig**italization of **Bio**manufacturing (Dig4Bio)
-workshops.
+Welcome to the the GitHub page for the **Dig**italization of **Bio**manufacturing (Dig4Bio).
+
+this page contains the source code for the Dig4Bio workshops.
 
 <img src="media/logo/dig4bio_v2.png" 
         alt="Picture" 
@@ -39,10 +40,32 @@ For the latest news and updates follow the [LinkedIn page](https://www.linkedin.
 ## Partners
 The Dig4Bio consotrium includes
 
+<img src="media/logo/IST_logo.png" 
+        alt="Picture" 
+        width="600" 
+        height="300" 
+        style="display: block; margin: 0 auto" />
+
+<img src="media/logo/tuberlin_logo.png" 
+        alt="Picture" 
+        width="500" 
+        height="300" 
+        style="display: block; margin: 0 auto" />
+
+<img src="media/logo/DTU-logo.png" 
+        alt="Picture" 
+        width="500" 
+        height="300" 
+        style="display: block; margin: 0 auto" />
 
 
 ## Dates
 
+| Event | Date |
+|-------|------|
+|       |      |
+|       |      |
+|       |      |
 
 # Content
 
