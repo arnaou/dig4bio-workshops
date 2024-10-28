@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'WS2/module_2/0_intro_module_2';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Hybrid Modelling" href="../module_3/0_intro_module_3.html" />
+    <link rel="next" title="Classification using Data Driven Approaches" href="1_dd_classification.html" />
     <link rel="prev" title="Mechanistic modelling" href="../module_1/0_intro_module_1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -218,12 +218,10 @@
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../../WS1/module_5/0_FedBatch_Ecoli_simulation.html">Module 5</a></li>
-
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../WS1/module_6/0_intro_module_6.html">Module 6</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../WS1/module_6/1_Mass_Transfer.html">Mass transfer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../WS1/module_6/2_Diafiltration.html">Diafiltration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../WS1/module_6/3_Cell_lysis.html"><strong>Bead mill</strong></a></li>
-
+<li class="toctree-l2"><a class="reference internal" href="../../WS1/module_6/3_Cell_lysis.html">Cell lysis</a></li>
 </ul>
 </details></li>
 </ul>
@@ -231,7 +229,11 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../intro_to_ws2.html">Introduction to workshop 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../module_1/0_intro_module_1.html">Module 1</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Module 2</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Module 2</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="1_dd_classification.html">Classification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_dd_regression.html">Regression</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../module_3/0_intro_module_3.html">Exercice 1</a></li>
 </ul>
 
@@ -436,7 +438,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -452,6 +456,19 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gaussian-process-regression-gpr">1. Gaussian Process Regression (GPR)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#support-vector-regression-svr">2. Support Vector Regression (SVR)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-forests-rf">3. Random Forests (RF)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xgboost">4. XGBoost</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-neural-networks-dnn">5. Deep Neural Networks (DNN)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-comparison-and-selection">Model Comparison and Selection</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -463,6 +480,145 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="data-driven-modelling">
 <h1>Data-driven Modelling<a class="headerlink" href="#data-driven-modelling" title="Link to this heading">#</a></h1>
+<p>This document provides an overview of data-driven modeling techniques frequently used in chemical and biochemical engineering for predictive modeling, optimization, and process control. Each model has unique strengths and is suitable for different types of data and tasks. Here, we introduce the following models:</p>
+<ul class="simple">
+<li><p>Gaussian Process Regression (GPR)</p></li>
+<li><p>Support Vector Regression (SVR)</p></li>
+<li><p>Random Forests (RF)</p></li>
+<li><p>XGBoost</p></li>
+<li><p>Deep Neural Networks (DNN)</p></li>
+</ul>
+<section id="gaussian-process-regression-gpr">
+<h2>1. Gaussian Process Regression (GPR)<a class="headerlink" href="#gaussian-process-regression-gpr" title="Link to this heading">#</a></h2>
+<p>Gaussian Process Regression (GPR) is a non-parametric, probabilistic model that assumes a Gaussian distribution for data points. This model is well-suited for applications with small datasets and when uncertainty estimation is valuable.</p>
+<p><strong>Characteristics:</strong></p>
+<ul class="simple">
+<li><p>Provides a probability distribution over possible functions that fit the data.</p></li>
+<li><p>Useful for small datasets due to high computational cost for large datasets.</p></li>
+<li><p>Naturally incorporates uncertainty estimation, which is helpful in safety-critical applications.</p></li>
+</ul>
+<p><strong>Common Applications:</strong></p>
+<ul class="simple">
+<li><p>Prediction of reaction rates and yield with small data.</p></li>
+<li><p>Process control where uncertainty quantification is important.</p></li>
+</ul>
+<p><strong>Advantages:</strong></p>
+<ul class="simple">
+<li><p>Provides confidence intervals for predictions.</p></li>
+<li><p>Captures nonlinear relationships in data.</p></li>
+</ul>
+<p><strong>Limitations:</strong></p>
+<ul class="simple">
+<li><p>Computationally intensive for large datasets.</p></li>
+<li><p>Sensitive to the choice of kernel function (e.g., RBF kernel).</p></li>
+</ul>
+</section>
+<section id="support-vector-regression-svr">
+<h2>2. Support Vector Regression (SVR)<a class="headerlink" href="#support-vector-regression-svr" title="Link to this heading">#</a></h2>
+<p>Support Vector Regression (SVR) is a type of Support Vector Machine (SVM) adapted for regression tasks. It is particularly effective in high-dimensional spaces and can handle nonlinear relationships using kernel functions.</p>
+<p><strong>Characteristics:</strong></p>
+<ul class="simple">
+<li><p>Constructs a hyperplane in a high-dimensional space that best fits the data.</p></li>
+<li><p>The margin around the hyperplane is controlled by an error tolerance (epsilon) and penalty parameter (C).</p></li>
+</ul>
+<p><strong>Common Applications:</strong></p>
+<ul class="simple">
+<li><p>Predicting physicochemical properties (e.g., viscosity, solubility).</p></li>
+<li><p>Modeling complex relationships in reaction conditions and yields.</p></li>
+</ul>
+<p><strong>Advantages:</strong></p>
+<ul class="simple">
+<li><p>Works well with high-dimensional data.</p></li>
+<li><p>Flexible with choice of kernel functions for nonlinearity (e.g., RBF, polynomial).</p></li>
+</ul>
+<p><strong>Limitations:</strong></p>
+<ul class="simple">
+<li><p>Requires tuning of hyperparameters (C, epsilon).</p></li>
+<li><p>Less interpretable compared to simpler models like linear regression.</p></li>
+</ul>
+</section>
+<section id="random-forests-rf">
+<h2>3. Random Forests (RF)<a class="headerlink" href="#random-forests-rf" title="Link to this heading">#</a></h2>
+<p>Random Forests (RF) are ensemble models that use a collection of decision trees to make predictions. Each tree is trained on a random subset of the data, and the final prediction is an average (for regression) or majority vote (for classification).</p>
+<p><strong>Characteristics:</strong></p>
+<ul class="simple">
+<li><p>Ensemble method that reduces overfitting by averaging multiple decision trees.</p></li>
+<li><p>Effective in handling high-dimensional and noisy data.</p></li>
+</ul>
+<p><strong>Common Applications:</strong></p>
+<ul class="simple">
+<li><p>Predicting reaction yields and conversion rates.</p></li>
+<li><p>Feature selection and importance analysis.</p></li>
+</ul>
+<p><strong>Advantages:</strong></p>
+<ul class="simple">
+<li><p>Robust to overfitting and can handle large datasets well.</p></li>
+<li><p>Provides feature importance metrics for interpretability.</p></li>
+</ul>
+<p><strong>Limitations:</strong></p>
+<ul class="simple">
+<li><p>Can be less accurate for datasets with strong temporal dependencies.</p></li>
+<li><p>Requires sufficient data to perform well, particularly with many variables.</p></li>
+</ul>
+</section>
+<section id="xgboost">
+<h2>4. XGBoost<a class="headerlink" href="#xgboost" title="Link to this heading">#</a></h2>
+<p>XGBoost (eXtreme Gradient Boosting) is an optimized version of gradient-boosted decision trees, designed for speed and accuracy. It is highly popular in data-driven modeling due to its efficiency and competitive performance.</p>
+<p><strong>Characteristics:</strong></p>
+<ul class="simple">
+<li><p>Sequentially builds decision trees, where each tree corrects errors made by the previous one.</p></li>
+<li><p>Optimized for computational speed and resource efficiency.</p></li>
+</ul>
+<p><strong>Common Applications:</strong></p>
+<ul class="simple">
+<li><p>Yield prediction, particularly with complex and high-dimensional data.</p></li>
+<li><p>Process parameter optimization and sensitivity analysis.</p></li>
+</ul>
+<p><strong>Advantages:</strong></p>
+<ul class="simple">
+<li><p>Highly efficient and can handle large datasets.</p></li>
+<li><p>Incorporates regularization to control overfitting.</p></li>
+</ul>
+<p><strong>Limitations:</strong></p>
+<ul class="simple">
+<li><p>Requires careful tuning of hyperparameters (e.g., learning rate, number of trees).</p></li>
+<li><p>Complex to interpret due to sequential nature of boosting</p></li>
+</ul>
+</section>
+<section id="deep-neural-networks-dnn">
+<h2>5. Deep Neural Networks (DNN)<a class="headerlink" href="#deep-neural-networks-dnn" title="Link to this heading">#</a></h2>
+<p>Deep Neural Networks (DNN) are multilayered networks of artificial neurons designed to model complex, nonlinear relationships in data. They are highly flexible and can approximate intricate functions, making them suitable for many chemical and biochemical engineering applications.</p>
+<p><strong>Characteristics:</strong></p>
+<ul class="simple">
+<li><p>Composed of multiple layers of neurons, including input, hidden, and output layers.</p></li>
+<li><p>Each neuron applies a non-linear transformation to its inputs, allowing the model to capture complex patterns.</p></li>
+</ul>
+<p><strong>Common Applications:</strong></p>
+<ul class="simple">
+<li><p>Modeling nonlinear relationships in large, high-dimensional datasets.</p></li>
+<li><p>Predictive maintenance, fault detection, and optimization tasks.</p></li>
+</ul>
+<p><strong>Advantages:</strong></p>
+<ul class="simple">
+<li><p>Highly flexible and powerful for capturing complex, nonlinear relationships.</p></li>
+<li><p>Scalable to very large datasets with appropriate hardware (e.g., GPUs).</p></li>
+</ul>
+<p><strong>Limitations:</strong></p>
+<ul class="simple">
+<li><p>Requires large datasets to avoid overfitting and realize full potential.</p></li>
+<li><p>Often viewed as a “black box,” making interpretability challenging.</p></li>
+</ul>
+</section>
+<section id="model-comparison-and-selection">
+<h2>Model Comparison and Selection<a class="headerlink" href="#model-comparison-and-selection" title="Link to this heading">#</a></h2>
+<p><img src="../../media/WS2/model_comparaison.png" 
+        alt="Picture" 
+        width="600" 
+        height="300" 
+        style="display: block; margin: 0 auto" /></p>
+</section>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -505,11 +661,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="../module_3/0_intro_module_3.html"
+       href="1_dd_classification.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Hybrid Modelling</p>
+        <p class="prev-next-title">Classification using Data Driven Approaches</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -519,6 +675,26 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gaussian-process-regression-gpr">1. Gaussian Process Regression (GPR)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#support-vector-regression-svr">2. Support Vector Regression (SVR)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-forests-rf">3. Random Forests (RF)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xgboost">4. XGBoost</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-neural-networks-dnn">5. Deep Neural Networks (DNN)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-comparison-and-selection">Model Comparison and Selection</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
