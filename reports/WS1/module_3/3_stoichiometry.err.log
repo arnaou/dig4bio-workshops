@@ -1,0 +1,87 @@
+Traceback (most recent call last):
+  File "C:\Users\arnaou\AppData\Local\miniconda3\envs\dig4bio\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+  File "C:\Users\arnaou\AppData\Local\miniconda3\envs\dig4bio\Lib\site-packages\nbclient\client.py", line 1314, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\arnaou\AppData\Local\miniconda3\envs\dig4bio\Lib\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\arnaou\AppData\Local\miniconda3\envs\dig4bio\Lib\asyncio\base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\arnaou\AppData\Local\miniconda3\envs\dig4bio\Lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\arnaou\AppData\Local\miniconda3\envs\dig4bio\Lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\arnaou\AppData\Local\miniconda3\envs\dig4bio\Lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# code adapted from https://medium.com/swlh/balancing-chemical-equations-with-python-837518c9075b
+
+import re
+from sympy import Matrix, lcm
+
+element_list = []
+element_matrix = []
+reaction = 'H2 + N2 -> NH3'
+reactants = reaction.split("->")[0].replace(' ', '').split("+")
+products = reaction.split("->")[1].replace(' ', '').split("+")
+
+def add_matrix(element, index, count, side):
+    if(index == len(element_matrix)):
+        element_matrix.append([])
+        for x in element_list:
+            element_matrix[index].append(0)
+    if(element not in element_list):
+        element_list.append(element)
+        for i in range(len(element_matrix)):
+            element_matrix[i].append(0)
+    column = element_list.index(element)
+    element_matrix[index][column] += count*side
+    
+def find_elements(segment, index, side):
+    elements_numbers=re.split('([A-Z][a-z]?)',segment)
+    i=0
+    while(i < len(elements_numbers)-1):#last element always blank
+        i += 1
+        if(len(elements_numbers[i]) > 0):
+            if(elements_numbers[i+1].isdigit()):
+                count = int(elements_numbers[i+1])
+                add_matrix(elements_numbers[i], index, count, side)
+                i+=1
+            else:
+                add_matrix(elements_numbers[i], index, 1, side)        
+            
+for i in range(len(reactants)):
+    find_elements(reactants[i], i, 1)
+    
+for i in range(len(products)):
+    find_elements(products[i], i+len(reactants), -1)
+
+# use Matrix function from sympy to convert list of lists to matrix
+element_matrix = Matrix(element_matrix)
+# transpose matrix vertically
+element_matrix = element_matrix.transpose()
+# nullspace or kernel mapping
+solution = element_matrix.nullspace()[0]
+# find the least common multiple (smallest positive integer that is divisible by the found coefficients)
+multiple = lcm([val.q for val in solution])
+# multiply solution my lcm
+solution = multiple*solution
+coeff = solution.tolist()
+------------------
+
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Cell [1;32mIn[5], line 4[0m
+[0;32m      1[0m [38;5;66;03m# code adapted from https://medium.com/swlh/balancing-chemical-equations-with-python-837518c9075b[39;00m
+[0;32m      3[0m [38;5;28;01mimport[39;00m [38;5;21;01mre[39;00m
+[1;32m----> 4[0m [38;5;28;01mfrom[39;00m [38;5;21;01msympy[39;00m [38;5;28;01mimport[39;00m Matrix, lcm
+[0;32m      6[0m element_list [38;5;241m=[39m []
+[0;32m      7[0m element_matrix [38;5;241m=[39m []
+
+[1;31mModuleNotFoundError[0m: No module named 'sympy'
+
