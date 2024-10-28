@@ -1,0 +1,939 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Continuous reactor model &#8212; Dig4Bio-workshops</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'WS1/module_6/1_Mass_Transfer';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Diafiltration" href="2_Diafiltration.html" />
+    <link rel="prev" title="Module 4" href="0_intro_module_6.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/dig4bio_logo.png" class="logo__image only-light" alt="Dig4Bio-workshops - Home"/>
+    <script>document.write(`<img src="../../_static/dig4bio_logo.png" class="logo__image only-dark" alt="Dig4Bio-workshops - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    Dig4Bio workshops
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Python (WS1)</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../intro_to_ws1.html">Introduction to workshop 1</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module_1/0_python_basics.html">Module 1</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../module_1/1_hello_world.html">Hello World</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_1/2_statements.html">Statements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_1/3_control_flow.html">Control flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_1/4_exercise_1.html">Exercice 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_1/5_exercise_2.html">Exercice 2</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module_2/0_intro_module_2.html">Module 2</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../module_2/1_dictionaries_and_sets.html">Dicstionaries &amp; sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_2/2_dataframes.html">Dataframes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_2/3_numpy_arrays.html">Numpy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_2/4_data_visualizations.html">Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_2/5_exercise_1.html">Exercise</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module_3/0_intro_module_3.html">Module 3</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../module_3/1_operations.html">Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_3/2_linear_regression.html">Finding the logarithm of a value in Python</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../module_3/3_stoichiometry.html">Stoichiometry (1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_3/4_stoichiometry_solution.html">Stoichiometry (solution)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_3/5_stoichiometry_pt2.html">Stoichiometry (2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_3/6_exercise_1.html">Exercise</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module_4/0_intro_module_4.html">Module 4</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../module_4/1_reactors_in_python.html">Reactors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_4/2_combining_balances.html">Mass &amp; energy balances</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_4/3_combining_balances_solution.html">Stoichiometry (1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_4/4_exercise_1.html">Exercice 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_4/5_exercise_1_solution.html">Exercice 1 (solution)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_4/6_exercise_2.html">Exercice 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_4/7_exercise_2_solution.html">Exercice 2 (solution)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_5/0_FedBatch_Ecoli_simulation.html">Plotting</a></li>
+
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="0_intro_module_6.html">Module 6</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Mass transfer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_Diafiltration.html">Diafiltration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_Cell_lysis.html"><strong>Bead mill</strong></a></li>
+
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Model-based Techniques (WS2)</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks.html">Content with notebooks</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../markdown-notebooks.html">Notebooks with MyST Markdown</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../mymarkdownfile.html">Markdown Files</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/arnaou/dig4bio-workshops/blob/master/docs/WS1/module_6/1_Mass_Transfer.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/arnaou/dig4bio-workshops" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/arnaou/dig4bio-workshops/issues/new?title=Issue%20on%20page%20%2FWS1/module_6/1_Mass_Transfer.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/WS1/module_6/1_Mass_Transfer.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Continuous reactor model</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p>#Tutorial about Mass transfer in membrane processes</p>
+<p>Assuming total retention, what is the polarization module inside a tubular membrane (1[m] long), and a flat sheet membrane at the following two conditions:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(d_h\)</span> = 10 [cm], <span class="math notranslate nohighlight">\(\mu\)</span> = 0.001 [Pa s], <span class="math notranslate nohighlight">\(\rho\)</span> = 1000 [kg/m<span class="math notranslate nohighlight">\(^3\)</span>], <span class="math notranslate nohighlight">\(U\)</span> = 0.5 [m/s], <span class="math notranslate nohighlight">\(D\)</span> = 1.5E-9 [m<span class="math notranslate nohighlight">\(^2\)</span>/s]</p></li>
+<li><p><span class="math notranslate nohighlight">\(d_h\)</span> = 10 [cm], <span class="math notranslate nohighlight">\(\mu\)</span> = 10 [Pa s], <span class="math notranslate nohighlight">\(\rho\)</span> = 1400 [kg/m<span class="math notranslate nohighlight">\(^3\)</span>], <span class="math notranslate nohighlight">\(U\)</span> = 0.5 [m/s], <span class="math notranslate nohighlight">\(D\)</span> = 1.5E-9 [m<span class="math notranslate nohighlight">\(^2\)</span>/s]</p></li>
+</ul>
+<p>transmembrane flux of 0.01 [mm/s]</p>
+<p>Extra question: how sensitive is the polarzation to the retention ?
+Hint: include <span class="math notranslate nohighlight">\(C_p\)</span> in the model equations and assume a retention of 70%, meaning <span class="math notranslate nohighlight">\(\frac{C_p}{C_b} = 0.3\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;numpy&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Start by defining the parameters</span>
+<span class="n">d_h</span> <span class="o">=</span> <span class="mf">0.1</span>   <span class="c1"># m</span>
+<span class="n">mu</span> <span class="o">=</span> <span class="mf">0.001</span>  <span class="c1"># Pa s</span>
+<span class="c1"># mu = 10     # Pa s</span>
+<span class="n">rho</span> <span class="o">=</span> <span class="mi">1000</span>  <span class="c1"># kg/m^3</span>
+<span class="c1"># rho = 1400  # kg/m^3</span>
+<span class="n">U</span> <span class="o">=</span> <span class="mf">0.1</span>     <span class="c1"># m/s</span>
+<span class="n">D</span> <span class="o">=</span> <span class="mf">1.5</span><span class="o">*</span><span class="p">(</span><span class="mi">10</span><span class="o">**-</span><span class="mi">9</span><span class="p">)</span>   <span class="c1"># m^2/s</span>
+<span class="n">L</span> <span class="o">=</span> <span class="mi">1</span>       <span class="c1"># m</span>
+<span class="n">J_v</span> <span class="o">=</span> <span class="mf">1e-5</span>   <span class="c1"># m/s</span>
+
+<span class="c1"># Determine the Reynolds Number and the Schmidt Number</span>
+<span class="n">Re</span> <span class="o">=</span> <span class="n">U</span><span class="o">*</span><span class="n">d_h</span><span class="o">*</span><span class="n">rho</span><span class="o">/</span><span class="n">mu</span>
+<span class="n">Sc</span> <span class="o">=</span> <span class="n">mu</span><span class="o">/</span><span class="p">(</span><span class="n">rho</span><span class="o">*</span><span class="n">D</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Reynolds Number: </span><span class="si">{</span><span class="n">Re</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Schmidt Number: </span><span class="si">{</span><span class="n">Sc</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Reynolds Number: 1.4
+Schmidt Number: 4761905
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Based on the above result, use the appropriate correlation for the Sherwood Number</span>
+
+<span class="c1">## Laminar flow, Tubular membrane:</span>
+<span class="c1"># Sh = 1.62*(Re*Sc*(d_h/L))**0.33</span>
+<span class="c1">## Laminar flow, Flat sheet membrane:</span>
+<span class="n">Sh</span> <span class="o">=</span> <span class="mf">0.664</span><span class="o">*</span><span class="p">(</span><span class="n">Re</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">Sc</span><span class="o">**</span><span class="mf">0.33</span><span class="p">)</span>
+<span class="c1">## Turbulent flow, Tubular membrane:</span>
+<span class="c1"># Sh = 0.023*(Re**0.88)*(Sc**0.33)</span>
+<span class="c1">## Turbulent flow, Flat sheet membrane:</span>
+<span class="c1"># Sh = 0.036*(Re**0.8)*(Sc**0.33)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Sherwood Number: </span><span class="si">{</span><span class="n">Sh</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sherwood Number: 126
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Now we can calculate the mass transfer coefficient using the definition of the Sherwood number</span>
+<span class="n">K_m</span> <span class="o">=</span> <span class="n">Sh</span><span class="o">*</span><span class="n">D</span><span class="o">/</span><span class="n">d_h</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Mass transfer coefficient: </span><span class="si">{</span><span class="n">K_m</span><span class="si">}</span><span class="s1"> [m/s]&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mass transfer coefficient: 1.883610006827256e-06 [m/s]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Finally, the polarization module can calculated</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">J_v</span><span class="o">/</span><span class="n">K_m</span><span class="p">)</span>
+<span class="n">PM</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">J_v</span><span class="o">/</span><span class="n">K_m</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Polarization module: </span><span class="si">{</span><span class="n">PM</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.308954594504387
+Polarization module: 202.13880088034662
+</pre></div>
+</div>
+</div>
+</div>
+<p>#Extra tutorial about mass transfer in bioreactors</p>
+<p>This is a simple monod type kinetic model describing the growth of a microorganism, the substrate consumption and product formation, coupled with an interfacial mass transfer model describing the oxygen mass transfer rate, in a batch reactor.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define initial conditions of the simulation</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="mf">0.025</span> <span class="c1"># g/L   Biomass concentration</span>
+<span class="n">s0</span> <span class="o">=</span> <span class="mi">70</span>    <span class="c1"># g/L   Substrate concentration</span>
+<span class="n">p0</span> <span class="o">=</span> <span class="mi">0</span>     <span class="c1"># g/L   Product concentration</span>
+<span class="n">o0</span> <span class="o">=</span> <span class="mi">0</span>     <span class="c1"># g/L   Dissolved oxygen concentration</span>
+<span class="n">ini</span> <span class="o">=</span> <span class="p">[</span><span class="n">x0</span><span class="p">,</span> <span class="n">s0</span><span class="p">,</span> <span class="n">p0</span><span class="p">,</span> <span class="n">o0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define model parameters</span>
+<span class="n">Ks</span> <span class="o">=</span> <span class="mf">0.79</span>     <span class="c1"># g/L Substrate limitation constant</span>
+<span class="n">Yxs</span> <span class="o">=</span> <span class="mf">0.0857</span>  <span class="c1"># g/g Substrate to biomass yield</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">5.59</span>  <span class="c1"># g/g Biomass to product yield</span>
+<span class="n">Osat</span> <span class="o">=</span> <span class="mf">0.007</span>  <span class="c1"># g/L Oxygen saturation at 25C, 1atm (from Henrys law)</span>
+<span class="n">kla</span> <span class="o">=</span> <span class="mi">300</span>     <span class="c1"># h^-1 Gas-Liquid mass transfer coefficient</span>
+<span class="n">Yso</span> <span class="o">=</span> <span class="mf">0.2266</span>  <span class="c1"># gO2/gGlucose Oxygen to substrate yield</span>
+<span class="n">mu_max</span> <span class="o">=</span> <span class="mf">2.16</span> <span class="c1"># h^-1 Maximum growth rate of the microorganism</span>
+<span class="n">Ko</span> <span class="o">=</span> <span class="mf">0.001</span>    <span class="c1"># g/L Oxygen limitation constant</span>
+<span class="n">par</span> <span class="o">=</span> <span class="p">(</span><span class="n">Ks</span><span class="p">,</span> <span class="n">Yxs</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">Osat</span><span class="p">,</span> <span class="n">kla</span><span class="p">,</span> <span class="n">Yso</span><span class="p">,</span> <span class="n">mu_max</span><span class="p">,</span> <span class="n">Ko</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Batch operation equations:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define the model equations</span>
+<span class="k">def</span> <span class="nf">batch</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">par</span><span class="p">):</span>
+  <span class="c1"># Call parameters</span>
+  <span class="n">x</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">o</span> <span class="o">=</span> <span class="n">y</span>
+  <span class="n">Ks</span><span class="p">,</span> <span class="n">Yxs</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">Osat</span><span class="p">,</span> <span class="n">kla</span><span class="p">,</span> <span class="n">Yso</span><span class="p">,</span> <span class="n">mu_max</span><span class="p">,</span> <span class="n">Ko</span> <span class="o">=</span> <span class="n">par</span>
+  <span class="c1"># Emperical Monod equation</span>
+  <span class="n">mu</span> <span class="o">=</span> <span class="n">mu_max</span> <span class="o">*</span> <span class="p">(</span><span class="n">s</span><span class="o">/</span><span class="p">(</span><span class="n">Ks</span><span class="o">+</span><span class="n">s</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="n">o</span><span class="o">/</span><span class="p">(</span><span class="n">Ko</span><span class="o">+</span><span class="n">o</span><span class="p">))</span>
+  <span class="c1"># system of ODE to be solved</span>
+  <span class="n">dxdt</span> <span class="o">=</span> <span class="n">mu</span> <span class="o">*</span> <span class="n">x</span>
+  <span class="n">dsdt</span> <span class="o">=</span> <span class="o">-</span><span class="n">dxdt</span> <span class="o">/</span> <span class="n">Yxs</span>
+  <span class="n">dpdt</span> <span class="o">=</span> <span class="n">alpha</span> <span class="o">*</span> <span class="n">dxdt</span>
+  <span class="n">dodt</span> <span class="o">=</span> <span class="p">(</span><span class="n">kla</span> <span class="o">*</span> <span class="p">(</span><span class="n">Osat</span> <span class="o">-</span> <span class="n">o</span><span class="p">))</span> <span class="o">-</span> <span class="p">(</span><span class="n">Yso</span> <span class="o">*</span> <span class="p">(</span><span class="o">-</span><span class="n">dsdt</span><span class="p">))</span>
+  <span class="k">return</span> <span class="p">[</span><span class="n">dxdt</span><span class="p">,</span> <span class="n">dsdt</span><span class="p">,</span> <span class="n">dpdt</span><span class="p">,</span> <span class="n">dodt</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run the simulation</span>
+<span class="n">tspan</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="c1"># hours</span>
+<span class="n">sol</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">tspan</span><span class="p">,</span> <span class="n">ini</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;Radau&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">par</span><span class="p">,))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plotting the results using matplotlib</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;k-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;[X]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;r-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;[S]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="s1">&#39;g-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;[P]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time [h]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Concentration [g/L]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">tspan</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span> <span class="p">(</span><span class="mi">0</span><span class="p">,)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7828467a95d0&gt;
+</pre></div>
+</div>
+<img alt="../../_images/b986a04485c05de4fba2ddacf9921e0eb308195c6da4bc53731f313b4e2c8ee7.png" src="../../_images/b986a04485c05de4fba2ddacf9921e0eb308195c6da4bc53731f313b4e2c8ee7.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plotting the dissolved oxygen concentration</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span><span class="o">/</span><span class="n">Osat</span><span class="p">),</span><span class="s1">&#39;k-&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;O2 saturation&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time [hours]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;O2 saturation [sat%]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">tspan</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">110</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7828466453c0&gt;
+</pre></div>
+</div>
+<img alt="../../_images/569d375fb7932222625f12e577f40f379f70f28f017f287d26a88624c04ac16c.png" src="../../_images/569d375fb7932222625f12e577f40f379f70f28f017f287d26a88624c04ac16c.png" />
+</div>
+</div>
+<p>Exercise: modify the model equations to simulate a fedbatch fermentation and a continuous fermentation.
+Parameters for the fedbatch reactor:</p>
+<ul class="simple">
+<li><p>V<span class="math notranslate nohighlight">\(_{initial}\)</span> = 200 [L]</p></li>
+<li><p>F = 0.1 [m<span class="math notranslate nohighlight">\(^3\)</span>/h]</p></li>
+<li><p>Sf = 70 [g/L]</p></li>
+<li><p>S0 = 10 [g/L]</p></li>
+<li><p>Max working volume = 500 [L]</p></li>
+</ul>
+<p>Parameters for the continuous reactor</p>
+<ul class="simple">
+<li><p>D = 0.1 [h<span class="math notranslate nohighlight">\(^{-1}\)</span>]</p></li>
+<li><p>Sf = 70 [g/L]</p></li>
+<li><p>S0 = 70 [g/L]</p></li>
+</ul>
+<p>SPOILER!! the solution to the fedbatch reactors is shown bellow!</p>
+<p>Extra exercise: use an optimizer to optimize the final product concentration by changing the feeding rate (max feeding rate is 200 [L/h]). <br>
+<u>HINT:</u> use the Scipy.optimise.minimize package and define constraints.</p>
+<p>##FEDBATCH MODEL</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define initial conditions of the simulation</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="mf">0.025</span><span class="o">*</span><span class="mi">10</span> <span class="c1"># g/L   Biomass concentration</span>
+<span class="n">s0</span> <span class="o">=</span> <span class="mi">10</span>    <span class="c1"># g/L   Substrate concentration</span>
+<span class="n">p0</span> <span class="o">=</span> <span class="mi">0</span>     <span class="c1"># g/L   Product concentration</span>
+<span class="n">o0</span> <span class="o">=</span> <span class="mi">0</span>     <span class="c1"># g/L   Dissolved oxygen concentration</span>
+<span class="n">V0</span> <span class="o">=</span> <span class="mi">200</span>   <span class="c1"># L</span>
+<span class="n">ini</span> <span class="o">=</span> <span class="p">[</span><span class="n">x0</span><span class="p">,</span> <span class="n">s0</span><span class="p">,</span> <span class="n">p0</span><span class="p">,</span> <span class="n">o0</span><span class="p">,</span> <span class="n">V0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define model parameters, including the fedbatch parameters</span>
+<span class="n">Ks</span> <span class="o">=</span> <span class="mf">0.79</span>     <span class="c1"># g/L Substrate limitation constant</span>
+<span class="n">Yxs</span> <span class="o">=</span> <span class="mf">0.0857</span>  <span class="c1"># g/g Substrate to biomass yield</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">5.59</span>  <span class="c1"># g/g Biomass to product yield</span>
+<span class="n">Osat</span> <span class="o">=</span> <span class="mf">0.007</span>  <span class="c1"># g/L Oxygen saturation at 25C, 1atm (from Henrys law)</span>
+<span class="n">kla</span> <span class="o">=</span> <span class="mi">300</span>     <span class="c1"># h^-1 Gas-Liquid mass transfer coefficient</span>
+<span class="n">Yso</span> <span class="o">=</span> <span class="mf">0.2266</span>  <span class="c1"># gO2/gGlucose Oxygen to substrate yield</span>
+<span class="n">mu_max</span> <span class="o">=</span> <span class="mf">2.16</span> <span class="c1"># h^-1 Maximum growth rate of the microorganism</span>
+<span class="n">Ko</span> <span class="o">=</span> <span class="mf">0.001</span>    <span class="c1"># g/L Oxygen limitation constant</span>
+<span class="n">F</span> <span class="o">=</span> <span class="mi">50</span>        <span class="c1"># L/h Feeding rate</span>
+<span class="n">Sf</span> <span class="o">=</span> <span class="mi">70</span>       <span class="c1"># g/L Substrate concentration in the feed</span>
+<span class="n">par</span> <span class="o">=</span> <span class="p">(</span><span class="n">Ks</span><span class="p">,</span> <span class="n">Yxs</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">Osat</span><span class="p">,</span> <span class="n">kla</span><span class="p">,</span> <span class="n">Yso</span><span class="p">,</span> <span class="n">mu_max</span><span class="p">,</span> <span class="n">Ko</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span> <span class="n">Sf</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fedbatch</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">par</span><span class="p">):</span>
+  <span class="c1"># Call parameters</span>
+  <span class="n">x</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">o</span><span class="p">,</span> <span class="n">V</span> <span class="o">=</span> <span class="n">y</span>
+  <span class="n">Ks</span><span class="p">,</span> <span class="n">Yxs</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">Osat</span><span class="p">,</span> <span class="n">kla</span><span class="p">,</span> <span class="n">Yso</span><span class="p">,</span> <span class="n">mu_max</span><span class="p">,</span> <span class="n">Ko</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span> <span class="n">Sf</span> <span class="o">=</span> <span class="n">par</span>
+  <span class="c1"># Limiting the feeding to the max volume with an &quot;if&quot; statement</span>
+  <span class="k">if</span> <span class="n">V</span> <span class="o">&gt;</span> <span class="mi">700</span><span class="p">:</span>
+    <span class="n">F</span><span class="o">=</span><span class="mi">0</span>
+  <span class="c1"># Emperical Monod equation</span>
+  <span class="n">mu</span> <span class="o">=</span> <span class="n">mu_max</span> <span class="o">*</span> <span class="p">(</span><span class="n">s</span><span class="o">/</span><span class="p">(</span><span class="n">Ks</span><span class="o">+</span><span class="n">s</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="n">o</span><span class="o">/</span><span class="p">(</span><span class="n">Ko</span><span class="o">+</span><span class="n">o</span><span class="p">))</span>
+  <span class="c1"># system of ODE to be solved</span>
+  <span class="n">dxdt</span> <span class="o">=</span> <span class="p">(</span><span class="n">mu</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="n">F</span><span class="o">/</span><span class="n">V</span><span class="p">)</span>
+  <span class="n">dsdt</span> <span class="o">=</span> <span class="o">-</span><span class="p">((</span><span class="n">mu</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="n">Yxs</span><span class="p">)</span> <span class="o">+</span> <span class="p">((</span><span class="n">Sf</span><span class="o">-</span><span class="n">s</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">F</span><span class="o">/</span><span class="n">V</span><span class="p">))</span>
+  <span class="n">dpdt</span> <span class="o">=</span> <span class="n">alpha</span> <span class="o">*</span> <span class="n">dxdt</span> <span class="o">-</span> <span class="n">p</span><span class="o">*</span><span class="p">(</span><span class="n">F</span><span class="o">/</span><span class="n">V</span><span class="p">)</span>
+  <span class="n">dodt</span> <span class="o">=</span> <span class="p">(</span><span class="n">kla</span> <span class="o">*</span> <span class="p">(</span><span class="n">Osat</span> <span class="o">-</span> <span class="n">o</span><span class="p">))</span> <span class="o">-</span> <span class="p">(</span><span class="n">Yso</span> <span class="o">*</span> <span class="p">((</span><span class="n">mu</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="n">Yxs</span><span class="p">))</span> <span class="o">-</span> <span class="n">o</span><span class="o">*</span><span class="p">(</span><span class="n">F</span><span class="o">/</span><span class="n">V</span><span class="p">)</span>
+  <span class="n">dVdt</span> <span class="o">=</span> <span class="n">F</span>
+  <span class="k">return</span> <span class="p">[</span><span class="n">dxdt</span><span class="p">,</span> <span class="n">dsdt</span><span class="p">,</span> <span class="n">dpdt</span><span class="p">,</span> <span class="n">dodt</span><span class="p">,</span> <span class="n">dVdt</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run the simulation</span>
+<span class="n">tspan</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="c1"># hours</span>
+<span class="n">sol</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">fedbatch</span><span class="p">,</span> <span class="n">tspan</span><span class="p">,</span> <span class="n">ini</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;RK45&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">par</span><span class="p">,))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plotting the results using matplotlib</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;k-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;[X]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;r-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;[S]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="s1">&#39;g-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;[P]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time [h]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Concentration [g/L]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">tspan</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span> <span class="p">(</span><span class="mi">0</span><span class="p">,)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7982890b3f10&gt;
+</pre></div>
+</div>
+<img alt="../../_images/c52a09d0712a12cac60be3bcf15ee48c031c4d30436bce741b3d96ab74078e71.png" src="../../_images/c52a09d0712a12cac60be3bcf15ee48c031c4d30436bce741b3d96ab74078e71.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plotting the dissolved oxygen concentration</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span><span class="o">/</span><span class="n">Osat</span><span class="p">),</span><span class="s1">&#39;k-&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;O2 saturation&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time [hours]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;O2 saturation [sat%]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">tspan</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">110</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x79827deb2ad0&gt;
+</pre></div>
+</div>
+<img alt="../../_images/8d682273ea14970d66621e8608eac277a8a8ed62c56ca6c191eda79ce09636e5.png" src="../../_images/8d682273ea14970d66621e8608eac277a8a8ed62c56ca6c191eda79ce09636e5.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plotting the dissolved oxygen concentration</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">4</span><span class="p">]),</span><span class="s1">&#39;k-&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;liquid volume&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time [hours]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Liquid volume [L]&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Liquid volume [L]&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/81c514456ad975f77f887a8b49b201182387f1771ebe7db80c9ee17e37a80da2.png" src="../../_images/81c514456ad975f77f887a8b49b201182387f1771ebe7db80c9ee17e37a80da2.png" />
+</div>
+</div>
+<section id="continuous-reactor-model">
+<h1>Continuous reactor model<a class="headerlink" href="#continuous-reactor-model" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Now your turn to implement the continuous reactor with the given parameters</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./WS1\module_6"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="0_intro_module_6.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Module 4</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="2_Diafiltration.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Diafiltration</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Adem R.N. Aouichaoui, Carina L. Gargalo and Fiammetta Caccavale
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
