@@ -1,0 +1,772 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Energy balance for a laboratory equipment batch reactor for chemical synthesis &#8212; Dig4Bio-workshops</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'WS1/module_4/3_combining_balances_solution';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Problem B" href="4_exercise_1.html" />
+    <link rel="prev" title="Energy balance for a laboratory equipment batch reactor for chemical synthesis" href="2_combining_balances.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/dig4bio_logo.png" class="logo__image only-light" alt="Dig4Bio-workshops - Home"/>
+    <script>document.write(`<img src="../../_static/dig4bio_logo.png" class="logo__image only-dark" alt="Dig4Bio-workshops - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    Dig4Bio workshops
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Python (WS1)</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../intro_to_ws1.html">Introduction to workshop 1</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module_1/0_python_basics.html">Module 1</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../module_1/1_hello_world.html">Hello World</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_1/2_statements.html">Statements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_1/3_control_flow.html">Control flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_1/4_exercise_1.html">Exercice 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_1/5_exercise_2.html">Exercice 2</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module_2/0_intro_module_2.html">Module 2</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../module_2/1_dictionaries_and_sets.html">Dicstionaries &amp; sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_2/2_dataframes.html">Dataframes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_2/3_numpy_arrays.html">Numpy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_2/4_data_visualizations.html">Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_2/5_exercise_1.html">Exercise</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module_3/0_intro_module_3.html">Module 3</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../module_3/1_operations.html">Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_3/2_linear_regression.html">Finding the logarithm of a value in Python</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../module_3/3_stoichiometry.html">Stoichiometry (1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_3/4_stoichiometry_solution.html">Stoichiometry (solution)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_3/5_stoichiometry_pt2.html">Stoichiometry (2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_3/6_exercise_1.html">Exercise</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="0_intro_module_4.html">Module 4</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="1_reactors_in_python.html">Reactors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_combining_balances.html">Mass &amp; energy balances</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Stoichiometry (1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_exercise_1.html">Exercice 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5_exercise_1_solution.html">Exercice 1 (solution)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6_exercise_2.html">Exercice 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7_exercise_2_solution.html">Exercice 2 (solution)</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Model-based Techniques (WS2)</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks.html">Content with notebooks</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../markdown-notebooks.html">Notebooks with MyST Markdown</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../mymarkdownfile.html">Markdown Files</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/arnaou/dig4bio-workshops/blob/master/docs/WS1/module_4/3_combining_balances_solution.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/arnaou/dig4bio-workshops" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/arnaou/dig4bio-workshops/issues/new?title=Issue%20on%20page%20%2FWS1/module_4/3_combining_balances_solution.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/WS1/module_4/3_combining_balances_solution.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Energy balance for a laboratory equipment batch reactor for chemical synthesis</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="energy-balance-for-a-laboratory-equipment-batch-reactor-for-chemical-synthesis">
+<h1>Energy balance for a laboratory equipment batch reactor for chemical synthesis<a class="headerlink" href="#energy-balance-for-a-laboratory-equipment-batch-reactor-for-chemical-synthesis" title="Link to this heading">#</a></h1>
+<p>In this programming exercise you will also have from a chemical engineering point of view the task to develop the energy balance for a batch reactor. This is a task, we have not yet investigated in the lectures or group exercises.
+We consider the following Reaction taking place in a laboratory sized reactor using a liquid phase:</p>
+<p><span class="math notranslate nohighlight">\(A→B\)</span></p>
+<p>The setup is described in the following:
+<img alt="alt text" src="WS1/module_4/assignment2_system.png" /></p>
+<p>You can assume that the reaction order follows an elementary reaction and you have found in literature the rate velocity coefficient at 298 K to be 0.005 min-1.
+Please perform with help the following analysis:</p>
+<ol class="arabic simple">
+<li><p>Calculate the conversion and the Temperature as a function of time under the assumption that the reactor is operated under adiabatic conditions starting with a temperature of 298 K.</p></li>
+<li><p>Repeat the calculations for the heated reactor. Here the heating bed will generate a constant temperature of 398 K. Plot the conversion and temperature of the reactor as function of the time</p></li>
+<li><p>Repeat the calculations for the reactor without reaction, in other words show how the reactor and the reactor mixture would behave as function of time assuming that no reaction takes place.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
+<span class="c1">#SI-units are used through the entire assigment</span>
+<span class="n">HA_298</span> <span class="o">=</span> <span class="o">-</span><span class="mi">622960</span>
+<span class="n">HB_298</span> <span class="o">=</span> <span class="o">-</span><span class="mi">380450</span>
+<span class="n">CA0</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="n">h1</span> <span class="o">=</span> <span class="mf">0.05</span>
+<span class="n">h2</span> <span class="o">=</span> <span class="mf">0.05</span>
+<span class="n">R_sphere</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="n">E</span> <span class="o">=</span> <span class="mi">25000</span>
+<span class="n">R</span> <span class="o">=</span> <span class="mf">8.314</span>
+<span class="n">CPliq</span> <span class="o">=</span> <span class="mi">77</span>
+<span class="n">MWA</span> <span class="o">=</span> <span class="mf">0.28534</span>
+<span class="n">U1</span> <span class="o">=</span> <span class="mi">40000</span>
+<span class="n">U2</span> <span class="o">=</span> <span class="mi">5000</span>
+<span class="n">Ntot0</span> <span class="o">=</span> <span class="mi">140</span>
+<span class="n">T0</span> <span class="o">=</span> <span class="mi">298</span>
+<span class="n">k_298</span> <span class="o">=</span> <span class="mf">0.005</span><span class="o">/</span><span class="mi">60</span>
+<span class="c1">#Volume of reactor is calculated:</span>
+<span class="n">V_reactor</span> <span class="o">=</span> <span class="mi">4</span><span class="o">/</span><span class="mi">3</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">R_sphere</span><span class="o">**</span><span class="mi">3</span>
+<span class="c1">#Half the reactor is filled with liquid, so:</span>
+<span class="n">V</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">V_reactor</span>
+<span class="c1">#From this the initial amount of A is found:</span>
+<span class="n">NA0</span> <span class="o">=</span> <span class="n">CA0</span><span class="o">*</span><span class="n">V</span><span class="o">/</span><span class="n">MWA</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">NA0</span><span class="p">)</span>
+<span class="c1">#NA0=52.5688</span>
+<span class="c1">#A Stoiciometric table is made for the reaction</span>
+<span class="n">species</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;I&quot;</span><span class="p">]</span>
+<span class="n">start</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;N_</span><span class="si">{A0}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span> <span class="s2">&quot;N_</span><span class="si">{I0}</span><span class="s2">&quot;</span><span class="p">]</span>
+<span class="n">coefficients</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;-1&quot;</span><span class="p">,</span><span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">]</span>
+<span class="n">change</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;$$&quot;</span><span class="o">+</span><span class="n">n</span><span class="o">+</span><span class="s2">&quot;* N_</span><span class="si">{A0}</span><span class="s2">* X$$&quot;</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">coefficients</span><span class="p">]</span>
+<span class="c1"># If the start concentration is zero, the end flow is the same as the change in flow:</span>
+<span class="k">def</span> <span class="nf">endf</span><span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="n">change</span><span class="p">,</span><span class="n">species</span><span class="p">,</span><span class="n">coefficients</span><span class="p">):</span>
+    <span class="n">end</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">start</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">start</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;0&quot;</span><span class="p">:</span>
+            <span class="n">end</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">change</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="c1"># If this is not the case, the end flow is the difference between start and change (were Theta_J = F_J0/F_A0)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">end</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;$$N_</span><span class="si">{A0}</span><span class="s2">*(</span><span class="se">\u03F4</span><span class="s2">_&quot;</span><span class="o">+</span><span class="n">species</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="s2">&quot;+&quot;</span><span class="o">+</span><span class="s2">&quot;(&quot;</span><span class="o">+</span><span class="n">coefficients</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="s2">&quot;* X))$$&quot;</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">end</span><span class="p">)</span>
+<span class="n">end</span> <span class="o">=</span> <span class="n">endf</span><span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="n">change</span><span class="p">,</span><span class="n">species</span><span class="p">,</span><span class="n">coefficients</span><span class="p">)</span>
+<span class="c1">#The stoichiometric table is setup in a pandas data frame</span>
+<span class="n">stoictable</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Start&quot;</span><span class="p">:[</span><span class="s2">&quot;$$&quot;</span><span class="o">+</span><span class="n">i</span><span class="o">+</span><span class="s2">&quot;$$&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">start</span><span class="p">],</span> <span class="s2">&quot;Change&quot;</span><span class="p">:</span><span class="n">change</span><span class="p">,</span> <span class="s2">&quot;End&quot;</span><span class="p">:</span><span class="n">end</span><span class="p">},</span>  <span class="n">index</span><span class="o">=</span><span class="n">species</span><span class="p">)</span>
+<span class="n">stoictable</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">math</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#The expression for reaction rate is defined, the rate velocity coefficient is assumed to following Arrenhius&#39; equation</span>
+<span class="c1">#The equation found in the calculation sheet is used to define k at any temperature:</span>
+<span class="k">def</span> <span class="nf">k</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span><span class="n">T0</span><span class="p">,</span><span class="n">T</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">k0</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">E</span><span class="o">/</span><span class="n">R</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">T0</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="n">T</span><span class="p">))</span>
+<span class="c1">#The reaction is elementary, so the reaction is first order. -r_a = kC_a, since volume is constant: C_a = N_a/V. We can now define the reaction rate in terms of X and T:</span>
+<span class="k">def</span> <span class="nf">r_a</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">T</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">k</span><span class="p">(</span><span class="n">k_298</span><span class="p">,</span> <span class="mi">298</span><span class="p">,</span> <span class="n">T</span><span class="p">)</span><span class="o">*</span><span class="n">NA0</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">X</span><span class="p">)</span><span class="o">/</span><span class="n">V</span>
+<span class="c1">#Now we can insert into the design equation for a batch reactor, defining our first differential equation:</span>
+<span class="k">def</span> <span class="nf">design_batch</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">T</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">r_a</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">T</span><span class="p">)</span><span class="o">*</span><span class="n">V</span><span class="o">/</span><span class="n">NA0</span>
+<span class="c1">#Similar to what&#39;s done above, the different part sof the heat balance is defined in functions. The heat balance can be foundin the calculation sheet.</span>
+<span class="c1">#Since no heat capacity for A and B is given, we assume that the enthalpy is constant, so the term DeltaHrx becomes:</span>
+<span class="n">Hrx</span> <span class="o">=</span> <span class="n">HB_298</span> <span class="o">-</span> <span class="n">HA_298</span>
+<span class="c1">#The heat capacity of the liquid is said to be constant, so this is easily defined:</span>
+<span class="n">CPs</span> <span class="o">=</span> <span class="n">CPliq</span>
+<span class="c1">#Since the heat capacity is constant, we assume that DeltaC_p = 0</span>
+<span class="c1">#The last term we need to define is Q, for this we use the overall heat transfer coefficient U</span>
+<span class="c1">#We need to calculate the areas where heat transfer occurs. The area between the flask and heating block is:</span>
+<span class="n">A1</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">R_sphere</span><span class="o">*</span><span class="n">h1</span>
+<span class="n">A2</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">R_sphere</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">R_sphere</span><span class="o">*</span><span class="n">h1</span>
+<span class="c1">#Now the two heat transfers can be defined:</span>
+<span class="k">def</span> <span class="nf">Q</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">U</span><span class="p">,</span><span class="n">T0</span><span class="p">,</span><span class="n">T</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">A</span><span class="o">*</span><span class="n">U</span><span class="o">*</span><span class="nb">abs</span><span class="p">(</span><span class="n">T0</span><span class="o">-</span><span class="n">T</span><span class="p">)</span>
+
+<span class="c1">#Now we define the system of differential equations for the three cases:</span>
+<span class="c1">#For the adiabatic case heat transfer is zero, so Q = 0:</span>
+<span class="k">def</span> <span class="nf">adiabatic</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
+    <span class="n">X</span><span class="p">,</span> <span class="n">T</span> <span class="o">=</span> <span class="n">z</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">design_batch</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">T</span><span class="p">),</span> <span class="p">((</span><span class="o">-</span><span class="n">Hrx</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="n">r_a</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">T</span><span class="p">))</span><span class="o">*</span><span class="n">V</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">Ntot0</span><span class="o">*</span><span class="n">CPs</span><span class="p">)]</span>
+
+<span class="c1">#In the second case heat transfer is present:</span>
+<span class="k">def</span> <span class="nf">transfer</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
+    <span class="n">X</span><span class="p">,</span> <span class="n">T</span> <span class="o">=</span> <span class="n">z</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">design_batch</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">T</span><span class="p">),</span> <span class="p">((</span><span class="n">Q</span><span class="p">(</span><span class="n">A1</span><span class="p">,</span><span class="n">U1</span><span class="p">,</span><span class="mi">398</span><span class="p">,</span><span class="n">T</span><span class="p">)</span><span class="o">-</span><span class="n">Q</span><span class="p">(</span><span class="n">A2</span><span class="p">,</span><span class="n">U2</span><span class="p">,</span><span class="mi">298</span><span class="p">,</span><span class="n">T</span><span class="p">))</span><span class="o">-</span><span class="n">Hrx</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="n">r_a</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">T</span><span class="p">))</span><span class="o">*</span><span class="n">V</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">Ntot0</span><span class="o">*</span><span class="n">CPs</span><span class="p">)]</span>
+
+<span class="c1">#In the last case no reaction takes place, so -r_a = 0</span>
+<span class="k">def</span> <span class="nf">no_reaction</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
+    <span class="n">X</span><span class="p">,</span> <span class="n">T</span> <span class="o">=</span> <span class="n">z</span>
+    <span class="k">return</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">((</span><span class="n">Q</span><span class="p">(</span><span class="n">A1</span><span class="p">,</span><span class="n">U1</span><span class="p">,</span><span class="mi">398</span><span class="p">,</span><span class="n">T</span><span class="p">)</span><span class="o">-</span><span class="n">Q</span><span class="p">(</span><span class="n">A2</span><span class="p">,</span><span class="n">U2</span><span class="p">,</span><span class="mi">298</span><span class="p">,</span><span class="n">T</span><span class="p">)))</span><span class="o">/</span><span class="p">(</span><span class="n">Ntot0</span><span class="o">*</span><span class="n">CPs</span><span class="p">)]</span>
+
+<span class="c1">#A function solving the system of equations and plotting the result is defined:</span>
+<span class="k">def</span> <span class="nf">solve_and_plot_system</span><span class="p">(</span><span class="n">system</span><span class="p">,</span> <span class="n">tspan</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
+    <span class="n">sol</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">system</span><span class="p">,</span> <span class="n">tspan</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">dense_output</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># dense_output=True computes a continuous solution</span>
+    <span class="c1">#generating t and solving the system of ODEs</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">tspan</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">tspan</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">100</span><span class="p">)</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">sol</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    
+    <span class="c1"># plotting the solution</span>
+    <span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Time [s]&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Conversion&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+    <span class="n">ax2</span><span class="o">=</span><span class="n">ax</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">z</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">)</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Temperature [K]&quot;</span><span class="p">,</span><span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+   
+
+<span class="c1"># The three systems are solved, and their solutions are plotted</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;First the three solutions are plotted until conversion is close to 1:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Different time intervals are used for the first plot compared to the others&quot;</span><span class="p">)</span>
+<span class="n">solve_and_plot_system</span><span class="p">(</span><span class="n">adiabatic</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">50000</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">298</span><span class="p">],</span> <span class="s2">&quot;adiabatic&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Since the heat of reaction is positive, heat is consumed by the reaction, so we expect temperature to drop in the adiabatic case, which is what is observed&quot;</span><span class="p">)</span>
+<span class="n">solve_and_plot_system</span><span class="p">(</span><span class="n">transfer</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">5000</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">298</span><span class="p">],</span> <span class="s2">&quot;with heat transfer&quot;</span><span class="p">)</span>
+<span class="n">solve_and_plot_system</span><span class="p">(</span><span class="n">no_reaction</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">5000</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">298</span><span class="p">],</span> <span class="s2">&quot;with heat transfer, but no reaction&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It&#39;s difficult to see what happens at the beginning for the last two plots, these are plotted again in a short interval&quot;</span><span class="p">)</span>
+<span class="n">solve_and_plot_system</span><span class="p">(</span><span class="n">transfer</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">50</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">298</span><span class="p">],</span> <span class="s2">&quot;with heat transfer&quot;</span><span class="p">)</span>
+<span class="n">solve_and_plot_system</span><span class="p">(</span><span class="n">no_reaction</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">50</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">298</span><span class="p">],</span> <span class="s2">&quot;with heat transfer, but no reaction&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The temperature settles after around 60 seconds for both cases, which seems to be unreasonalably fast, probably because the heat transfer coefficients are very large&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nevertheless, it can be seen that the temperature growth is very similar in the last two cases this is because the heat of reaction is negligible compared to heat transfer&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This is expected since the mol</span><span class="si">% o</span><span class="s2">f A in the reactor is very small:&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">NA0</span><span class="o">/</span><span class="n">Ntot0</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="s2">&quot;i.e. less than 0.1%&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>First the three solutions are plotted until conversion is close to 1:
+Different time intervals are used for the first plot compared to the others
+</pre></div>
+</div>
+<img alt="../../_images/524b948158fafdab9c3aa44aff0667b0e99a9a3131ee158e31b261868c6fff92.png" src="../../_images/524b948158fafdab9c3aa44aff0667b0e99a9a3131ee158e31b261868c6fff92.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Since the heat of reaction is positive, heat is consumed by the reaction, so we expect temperature to drop in the adiabatic case, which is what is observed
+</pre></div>
+</div>
+<img alt="../../_images/a2827e86a3a64a4041cfa2d98b95a6e426b2e0561177c6c74006ac37fdbe27a5.png" src="../../_images/a2827e86a3a64a4041cfa2d98b95a6e426b2e0561177c6c74006ac37fdbe27a5.png" />
+<img alt="../../_images/7f66686654ce2c8fdabdc4f1649416181c533c6929906c55aad96a10e94ca86e.png" src="../../_images/7f66686654ce2c8fdabdc4f1649416181c533c6929906c55aad96a10e94ca86e.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>It&#39;s difficult to see what happens at the beginning for the last two plots, these are plotted again in a short interval
+</pre></div>
+</div>
+<img alt="../../_images/969e29219273da107a2b71dab66aef2283592a9865683b58b594e51d3cb87085.png" src="../../_images/969e29219273da107a2b71dab66aef2283592a9865683b58b594e51d3cb87085.png" />
+<img alt="../../_images/eec5d31f701938f6b9ff7cb578fbfef3c693456cfb4ef2bfc5684dfa7481dc0e.png" src="../../_images/eec5d31f701938f6b9ff7cb578fbfef3c693456cfb4ef2bfc5684dfa7481dc0e.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The temperature settles after around 60 seconds for both cases, which seems to be unreasonalably fast, probably because the heat transfer coefficients are very large
+Nevertheless, it can be seen that the temperature growth is very similar in the last two cases this is because the heat of reaction is negligible compared to heat transfer
+This is expected since the mol% of A in the reactor is very small: 0.079 i.e. less than 0.1%
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">A1</span><span class="p">,</span> <span class="n">A2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.031415926535897934 0.031415926535897934
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">solve_and_plot_system</span><span class="p">(</span><span class="n">adiabatic</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">50</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">298</span><span class="p">],</span> <span class="s2">&quot;adiabatic&quot;</span><span class="p">)</span>
+<span class="n">solve_and_plot_system</span><span class="p">(</span><span class="n">transfer</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">50</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">298</span><span class="p">],</span> <span class="s2">&quot;with heat transfer&quot;</span><span class="p">)</span>
+<span class="n">solve_and_plot_system</span><span class="p">(</span><span class="n">no_reaction</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">60000</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">298</span><span class="p">],</span> <span class="s2">&quot;with heat transfer, but no reaction&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/2d34993cacbbce4e07991a990d09aa23acdf319f983e0c12a3cb50ed58c8376b.png" src="../../_images/2d34993cacbbce4e07991a990d09aa23acdf319f983e0c12a3cb50ed58c8376b.png" />
+<img alt="../../_images/969e29219273da107a2b71dab66aef2283592a9865683b58b594e51d3cb87085.png" src="../../_images/969e29219273da107a2b71dab66aef2283592a9865683b58b594e51d3cb87085.png" />
+<img alt="../../_images/f9ed5469d9afed6fffe818f13e869c09e4ded67985b87a8a23202b33fb0b3387.png" src="../../_images/f9ed5469d9afed6fffe818f13e869c09e4ded67985b87a8a23202b33fb0b3387.png" />
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./WS1\module_4"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="2_combining_balances.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Energy balance for a laboratory equipment batch reactor for chemical synthesis</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="4_exercise_1.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Problem B</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Adem R.N. Aouichaoui, Carina L. Gargalo and Fiammetta Caccavale
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
