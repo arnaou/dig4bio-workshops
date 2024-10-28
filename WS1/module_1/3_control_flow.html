@@ -228,14 +228,6 @@
 </ul>
 </details></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Model-based Techniques (WS2)</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../notebooks.html">Content with notebooks</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../markdown-notebooks.html">Notebooks with MyST Markdown</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../mymarkdownfile.html">Markdown Files</a></li>
-</ul>
-</details></li>
-</ul>
 
     </div>
 </nav></div>
@@ -645,15 +637,15 @@ Thomas is not Mary
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># In this example we will use a library called Numpy</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># we initialize a matrix with random samples from a uniform distribution [0, 1) of shape 2x3 (rowsxcolumns)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Row [0.52837673 0.64849983 0.32729024]
+Element 0.5283767338562317
+Element 0.6484998314182872
+Element 0.3272902404435475
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;numpy&#39;
+Row [0.55941019 0.96883611 0.01391611]
+Element 0.559410194743998
+Element 0.9688361106690009
+Element 0.013916106594761168
 </pre></div>
 </div>
 </div>
@@ -692,8 +684,8 @@ Our total amount c is: 11, so the condition is within the limit
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># infinite loop: interrupt execution!</span>
 
-<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This will keep running...&#39;</span><span class="p">)</span>
+<span class="c1">#while True:</span>
+<span class="c1">#    print(&#39;This will keep running...&#39;)</span>
 </pre></div>
 </div>
 </div>
@@ -776,16 +768,16 @@ Depending on what you want to achieve, you may use either of these commands.</p>
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "aimbio"
         },
         kernelOptions: {
-            name: "python3",
+            name: "aimbio",
             path: "./WS1\module_1"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'aimbio'</script>
 
                 </article>
               

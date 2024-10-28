@@ -230,14 +230,6 @@
 </ul>
 </details></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Model-based Techniques (WS2)</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../notebooks.html">Content with notebooks</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../markdown-notebooks.html">Notebooks with MyST Markdown</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../mymarkdownfile.html">Markdown Files</a></li>
-</ul>
-</details></li>
-</ul>
 
     </div>
 </nav></div>
@@ -601,8 +593,16 @@ b. For a second order reaction, n = 2
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The rate constant is: 9.0
-Time needed to reach given concentration of A is: 110.0 hours
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">11</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="k">def</span> <span class="nf">second_order_time</span><span class="p">(</span><span class="n">C_ratio</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="k">return</span> <span class="mi">1</span><span class="o">/</span><span class="n">k</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">C_ratio</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">11</span> <span class="n">k_second_order</span> <span class="o">=</span> <span class="n">second_order_reaction_batch</span><span class="p">(</span><span class="n">CA_CA0_1h</span><span class="p">,</span> <span class="n">t1</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The rate constant is: </span><span class="si">{</span><span class="n">k_second_order</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="n">t2</span> <span class="o">=</span> <span class="n">second_order_time</span><span class="p">(</span><span class="n">CA_CA0_t</span><span class="p">,</span> <span class="n">k_second_order</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;CA_CA0_1h&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -650,12 +650,18 @@ Time needed to reach given concentration of A is: 110.0 hours
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Rate constant and time for first order batch reaction:
-2.3025850929940455
-2.0
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">28</span>
+<span class="g g-Whitespace">     </span><span class="mi">25</span>     <span class="k">return</span> <span class="nb">round</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">27</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Rate constant and time for first order batch reaction:&#39;</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">28</span> <span class="n">k_first_order</span> <span class="o">=</span> <span class="n">reaction_batch</span><span class="p">(</span><span class="n">CA_CA0_1h</span><span class="p">,</span> <span class="n">t1</span><span class="p">,</span> <span class="s1">&#39;first&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">29</span> <span class="nb">print</span><span class="p">(</span><span class="n">k_first_order</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">30</span> <span class="nb">print</span><span class="p">(</span><span class="n">calculate_time</span><span class="p">(</span><span class="n">CA_CA0_t</span><span class="p">,</span> <span class="n">k_first_order</span><span class="p">,</span> <span class="s1">&#39;first&#39;</span><span class="p">)</span><span class="o">-</span><span class="n">t1</span><span class="p">)</span>
 
-Rate constant and time for second order batch reaction:
-9.0
-110.0
+<span class="ne">NameError</span>: name &#39;CA_CA0_1h&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -681,7 +687,14 @@ Rate constant and time for second order batch reaction:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The residence time in a CSTR with n=1 is: 434 h
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">8</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Density should be constant in this exercise&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="k">return</span> <span class="nb">round</span><span class="p">(</span><span class="n">tau</span><span class="p">)</span>
+<span class="nn">----&gt; 8 print(f&#39;The residence time</span> in <span class="ni">a CSTR with n=1 is: {first_order_reaction_CSTR</span><span class="nt">(CA_CA0_t, k_first_order)} h&#39;)</span>
+
+<span class="ne">NameError</span>: name &#39;CA_CA0_t&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -700,7 +713,14 @@ Rate constant and time for second order batch reaction:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The residence time in a CSTR with n=2 is: 111000 h
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">8</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Density should be constant in this exercise&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="k">return</span> <span class="nb">round</span><span class="p">(</span><span class="n">tau</span><span class="p">)</span>
+<span class="nn">----&gt; 8 print(f&#39;The residence time</span> in <span class="ni">a CSTR with n=2 is: {second_order_reaction_CSTR</span><span class="nt">(CA_CA0_t, k_second_order)} h&#39;)</span>
+
+<span class="ne">NameError</span>: name &#39;CA_CA0_t&#39; is not defined
 </pre></div>
 </div>
 </div>

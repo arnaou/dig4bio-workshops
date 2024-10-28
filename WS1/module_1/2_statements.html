@@ -230,14 +230,6 @@
 </ul>
 </details></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Model-based Techniques (WS2)</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../notebooks.html">Content with notebooks</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../markdown-notebooks.html">Notebooks with MyST Markdown</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../mymarkdownfile.html">Markdown Files</a></li>
-</ul>
-</details></li>
-</ul>
 
     </div>
 </nav></div>
@@ -784,7 +776,7 @@ The disadvantage of this approach is that you can only use a generator created i
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;generator object &lt;genexpr&gt; at 0x00000135E03334C0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;generator object &lt;genexpr&gt; at 0x000002D550853220&gt;
 </pre></div>
 </div>
 </div>
@@ -1032,6 +1024,14 @@ This means that your code will probably be:</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25000.0
+5000.0
+2000.0
+100000
+</pre></div>
+</div>
+</div>
 </div>
 <p>Compared to…</p>
 <div class="cell docutils container">
@@ -1040,6 +1040,14 @@ This means that your code will probably be:</p>
 <span class="nb">print</span><span class="p">(</span><span class="mf">0.05</span> <span class="o">*</span> <span class="mi">100000</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="mf">0.02</span> <span class="o">*</span> <span class="mi">100000</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="mi">100000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25000.0
+5000.0
+2000.0
+100000
 </pre></div>
 </div>
 </div>
@@ -1066,6 +1074,11 @@ The gas constant is <span class="math notranslate nohighlight">\(R = 8.3144 Pa\c
 <span class="c1"># call the function and print the rate constant found</span>
 <span class="n">k</span> <span class="o">=</span> <span class="n">rate_constant</span><span class="p">(</span><span class="n">C0</span><span class="p">,</span> <span class="n">CA_CA0</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The constant rate k is: </span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s1"> m^3/mol*s&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The constant rate k is: 7.800168850713945e-05 m^3/mol*s
 </pre></div>
 </div>
 </div>
@@ -1096,12 +1109,23 @@ Than we would have to copy all the code and change the initial concentration var
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The constant rate k is: 7.800168850713945e-05 m^3/mol*s
+The constant rate k is: 3.535477451321161e-05 m^3/mol*s
+</pre></div>
+</div>
+</div>
 </div>
 <p>If we define a function, we can just do this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="n">rate_constant</span><span class="p">(</span><span class="mf">19.18</span><span class="p">,</span> <span class="mf">0.17</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The constant rate k is: </span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s1"> m^3/mol*s&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The constant rate k is: 3.535477451321161e-05 m^3/mol*s
 </pre></div>
 </div>
 </div>
