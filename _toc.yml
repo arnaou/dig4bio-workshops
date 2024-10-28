@@ -20,11 +20,75 @@ parts:
         title: Statements
       - file: WS1/module_1/3_control_flow
         title: Control flow
-      - file: WS1/module_1/4_exercice_1
+      - file: WS1/module_1/4_exercise_1
         title: Exercice 1
-      - file: WS1/module_1/5_exercice_2
+      - file: WS1/module_1/5_exercise_2
         title: Exercice 2
-    
+    #################################################################
+    - file: WS1/module_2/0_intro_module_2
+      title: Module 2
+      sections:
+      - file: WS1/module_2/1_dictionaries_and_sets
+        title: Dicstionaries & sets
+      - file: WS1/module_2/2_dataframes
+        title: Dataframes
+      - file: WS1/module_2/3_numpy_arrays
+        title: Numpy
+      - file: WS1/module_2/4_data_visualizations
+        title: Visualization
+      - file: WS1/module_2/5_exercise_1
+        title: Exercise
+    #################################################################  
+    - file: WS1/module_3/0_intro_module_3
+      title: Module 3
+      sections:
+      - file: WS1/module_3/1_operations
+        title: Operations
+      - file: WS1/module_3/2_linear_regression
+        title: Linear Regression
+      - file: WS1/module_3/3_stoichiometry
+        title: Stoichiometry (1)
+      - file: WS1/module_3/4_stoichiometry_solution
+        title: Stoichiometry (solution)
+      - file: WS1/module_3/5_stoichiometry_pt2
+        title: Stoichiometry (2)
+      - file: WS1/module_3/6_exercise_1
+        title: Exercise
+    #################################################################
+    - file: WS1/module_4/0_intro_module_4
+      title: Module 4
+      sections:
+      - file: WS1/module_4/1_reactors_in_python
+        title: Reactors
+      - file: WS1/module_4/2_combining_balances
+        title: Mass & energy balances
+      - file: WS1/module_4/3_combining_balances_solution
+        title: Stoichiometry (1)
+      - file: WS1/module_4/4_exercise_1
+        title: Exercice 1
+      - file: WS1/module_4/5_exercise_1_solution
+        title: Exercice 1 (solution)
+      - file: WS1/module_4/6_exercise_2
+        title: Exercice 2
+      - file: WS1/module_4/7_exercise_2_solution
+        title: Exercice 2 (solution)
+    #################################################################
+    - file: WS1/module_5/0_FedBatch_Ecoli_simulation
+      title: Module 5
+    #################################################################
+    - file: WS1/module_6/0_intro_module_6
+      title: Module 6
+      sections:
+      - file: WS1/module_6/1_Mass_Transfer
+        title: Mass transfer
+      - file: WS1/module_6/2_Diafiltration
+        title: Diafiltration
+      - file: WS1/module_6/3_Cell_lysis
+        title: Cell lysis
+        
+################################################################################
+#                                     Workshop 2
+################################################################################
   - caption: Model-based Techniques (WS2)
     chapters:
     - file: notebooks

@@ -1,0 +1,756 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Stoichiometry - Part 2 &#8212; Dig4Bio-workshops</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'WS1/module_3/5_stoichiometry_pt2';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Operations with SciPy" href="6_exercise_1.html" />
+    <link rel="prev" title="Stoichiometry - Part 1" href="4_stoichiometry_solution.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/dig4bio_logo.png" class="logo__image only-light" alt="Dig4Bio-workshops - Home"/>
+    <script>document.write(`<img src="../../_static/dig4bio_logo.png" class="logo__image only-dark" alt="Dig4Bio-workshops - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    Dig4Bio workshops
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Python (WS1)</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../intro_to_ws1.html">Introduction to workshop 1</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module_1/0_python_basics.html">Module 1</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../module_1/1_hello_world.html">Hello World</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_1/2_statements.html">Statements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_1/3_control_flow.html">Control flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_1/4_exercise_1.html">Exercice 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_1/5_exercise_2.html">Exercice 2</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module_2/0_intro_module_2.html">Module 2</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../module_2/1_dictionaries_and_sets.html">Dicstionaries &amp; sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_2/2_dataframes.html">Dataframes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_2/3_numpy_arrays.html">Numpy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_2/4_data_visualizations.html">Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_2/5_exercise_1.html">Exercise</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="0_intro_module_3.html">Module 3</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="1_operations.html">Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_linear_regression.html">Finding the logarithm of a value in Python</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="3_stoichiometry.html">Stoichiometry (1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_stoichiometry_solution.html">Stoichiometry (solution)</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Stoichiometry (2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6_exercise_1.html">Exercise</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module_4/0_intro_module_4.html">Module 4</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../module_4/1_reactors_in_python.html">Reactors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_4/2_combining_balances.html">Mass &amp; energy balances</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_4/3_combining_balances_solution.html">Stoichiometry (1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_4/4_exercise_1.html">Exercice 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_4/5_exercise_1_solution.html">Exercice 1 (solution)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_4/6_exercise_2.html">Exercice 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_4/7_exercise_2_solution.html">Exercice 2 (solution)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_5/0_FedBatch_Ecoli_simulation.html">Module 5</a></li>
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module_6/0_intro_module_6.html">Module 6</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../module_6/1_Mass_Transfer.html">Mass transfer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_6/2_Diafiltration.html">Diafiltration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_6/3_Cell_lysis.html"><strong>Bead mill</strong></a></li>
+
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Model-based Techniques (WS2)</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks.html">Content with notebooks</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../markdown-notebooks.html">Notebooks with MyST Markdown</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../mymarkdownfile.html">Markdown Files</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/arnaou/dig4bio-workshops/blob/master/docs/WS1/module_3/5_stoichiometry_pt2.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/arnaou/dig4bio-workshops" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/arnaou/dig4bio-workshops/issues/new?title=Issue%20on%20page%20%2FWS1/module_3/5_stoichiometry_pt2.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/WS1/module_3/5_stoichiometry_pt2.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Stoichiometry - Part 2</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goal"><strong>Goal</strong>:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation"><strong>Motivation</strong>:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1"><strong>Example 1:</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2"><strong>Example 2:</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-3"><strong>Example 3:</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-4"><strong>Example 4:</strong></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="stoichiometry-part-2">
+<h1>Stoichiometry - Part 2<a class="headerlink" href="#stoichiometry-part-2" title="Link to this heading">#</a></h1>
+<section id="goal">
+<h2><strong>Goal</strong>:<a class="headerlink" href="#goal" title="Link to this heading">#</a></h2>
+<p>The aim of this lesson is to help you design functions to create stoichiometric tables in Python.</p>
+<p>Here, an example of how to create a stoichiometric table for an equalmolar reaction is provided.
+Afterwards, a few exercises are provided, so you can try to write your own functions, making them as much generalizable as possible.
+It’s a good idea, once you have a working solution, to test the functions of different parameters to see if the results are still correct!</p>
+<p><strong>Remember</strong>, the provided solution is is only <strong>one of the many possible solutions</strong>, so please do try to re-write the function yourself, optimize it and make it more generalizable.</p>
+</section>
+<section id="motivation">
+<h2><strong>Motivation</strong>:<a class="headerlink" href="#motivation" title="Link to this heading">#</a></h2>
+<p>Writing these functions in Python might look like a lot of (manual) work, since the tables are populated by strings.</p>
+<p>However, if you manage to create the functions for the different types of systems, then you can reuse them and just change the initial parameters provided!</p>
+<p>This will also (hopefully) help you thinking carefully about the conditions and the assumptions given (e.g. is the reaction isothermal? Is there a volume change?), since you will have to choose the specific function based on that. In our experience, this is something that students often struggle with, so we hope to provide a tool that helps you taking into account all of this!</p>
+<section id="example-1">
+<h3><strong>Example 1:</strong><a class="headerlink" href="#example-1" title="Link to this heading">#</a></h3>
+<p>A company is about to start the production of B, this happens by the catalytic reaction:
+<span class="math notranslate nohighlight">\(A → B\)</span></p>
+<p>The feed stream consists of <span class="math notranslate nohighlight">\(1 kmol/m^3\)</span> A and <span class="math notranslate nohighlight">\(0.01 kmol/m^3\)</span> B, this is done at a rate of <span class="math notranslate nohighlight">\(120 m^3/min\)</span>.
+The reaction rate can be written as an elementary reaction and is carried out isothermally in the liquid phase. The reaction rate constant k is <span class="math notranslate nohighlight">\(0.18 \cdot 10^{-3}m^3 \cdot mol^{-1} \cdot s^{-1}\)</span></p>
+<ol class="arabic simple">
+<li><p>Draw up a stoichiometric table for the equation (here one possible solution is provided below):</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a stoichiometric table here</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="k">def</span> <span class="nf">stoichiometry_equalmolar_reaction</span><span class="p">(</span><span class="n">A0</span><span class="p">,</span> <span class="n">B0</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Function to create the stoichiomatric table for an eualmolar reaction with one reactant (A) and one product (B).</span>
+<span class="sd">    Input:</span>
+<span class="sd">        A0, B0: initial streams of A and B, respectively, in kmol/m^3.</span>
+<span class="sd">    Output:</span>
+<span class="sd">        stoichiometry_table (pd.DataFrame): pandas dataframe of the stoichiometric table of the given reaction.</span>
+<span class="sd">                                            It contains 5 columns: the species, </span>
+<span class="sd">                                            the number of moles that each species initially presents (feed rate),</span>
+<span class="sd">                                            the change in the number of moles brought about by reaction,</span>
+<span class="sd">                                            the number of moles after time t (effluent rate),</span>
+<span class="sd">                                            the concentration.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># initial cnditions</span>
+    <span class="n">Fj0_A</span> <span class="o">=</span> <span class="s1">&#39;F_A0&#39;</span>
+    <span class="n">Fj0_B</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">B0</span><span class="si">}</span><span class="s1">*F_A0&#39;</span>
+    <span class="n">Fj0_T</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">A0</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">B0</span><span class="si">}</span><span class="s1">*F_A0&#39;</span>
+    
+    <span class="c1"># change</span>
+    <span class="n">change_A</span> <span class="o">=</span> <span class="s1">&#39;-F_A0*X&#39;</span>
+    <span class="n">change_B</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">B0</span><span class="o">/</span><span class="n">A0</span><span class="si">}</span><span class="s1">*F_A0*X&#39;</span>
+    <span class="n">change_T</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="c1"># after time t</span>
+    <span class="n">Fj_A</span> <span class="o">=</span> <span class="s1">&#39;F_A0*(1-X)&#39;</span>
+    <span class="n">Fj_B</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;F_A0*(</span><span class="si">{</span><span class="n">B0</span><span class="si">}</span><span class="s1">+X)&#39;</span>
+    <span class="n">Fj_T</span> <span class="o">=</span> <span class="n">Fj0_T</span>
+    
+    <span class="c1"># concentration</span>
+    <span class="n">Cj_A</span> <span class="o">=</span> <span class="s1">&#39;C_A0*(1-X)&#39;</span>
+    <span class="n">Cj_B</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;C_A0*(</span><span class="si">{</span><span class="n">B0</span><span class="si">}</span><span class="s1">+X)&#39;</span>
+    
+    <span class="n">stoichiometry_table</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+    <span class="n">stoichiometry_table</span><span class="p">[</span><span class="s1">&#39;species&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span><span class="p">]</span>
+    <span class="n">stoichiometry_table</span><span class="p">[</span><span class="s1">&#39;F_j0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">Fj0_A</span><span class="p">,</span> <span class="n">Fj0_B</span><span class="p">,</span> <span class="n">Fj0_T</span><span class="p">]</span>
+    <span class="n">stoichiometry_table</span><span class="p">[</span><span class="s1">&#39;change&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">change_A</span><span class="p">,</span> <span class="n">change_B</span><span class="p">,</span> <span class="n">change_T</span><span class="p">]</span>
+    <span class="n">stoichiometry_table</span><span class="p">[</span><span class="s1">&#39;F_j&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">Fj_A</span><span class="p">,</span> <span class="n">Fj_B</span><span class="p">,</span> <span class="n">Fj_T</span><span class="p">]</span>
+    <span class="n">stoichiometry_table</span><span class="p">[</span><span class="s1">&#39;C_j&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">Cj_A</span><span class="p">,</span> <span class="n">Cj_B</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span>
+    
+    <span class="k">return</span> <span class="n">stoichiometry_table</span>
+    
+<span class="n">stoichiometry_equalmolar_reaction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Create a stoichiometric table here</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">def</span> <span class="nf">stoichiometry_equalmolar_reaction</span><span class="p">(</span><span class="n">A0</span><span class="p">,</span> <span class="n">B0</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span><span class="sd">     Function to create the stoichiomatric table for an eualmolar reaction with one reactant (A) and one product (B).</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="sd">     Input:</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span><span class="sd">                                             the concentration.</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span><span class="sd">     &quot;&quot;&quot;</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="example-2">
+<h3><strong>Example 2:</strong><a class="headerlink" href="#example-2" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(2A(1)→ B(1)\)</span></p>
+<p>takes place in the liquid phase. A kinetic study is carried out in a batch reactor under the following operating conditions. The concentration of A in the reactor at the start is <span class="math notranslate nohighlight">\(120 mol/m^3\)</span>. There is no B in the reactor at the start of the experiment and the temperature is assumed to be constant at 330 K.</p>
+<p>When solving the problem, it can be assumed that there are no volume changes during the reaction.</p>
+<p>1.1. Set up a stoichiometric table and find expressions for <span class="math notranslate nohighlight">\(C_A\)</span> and <span class="math notranslate nohighlight">\(C_B\)</span> as a function of the degree of conversion of A.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="example-3">
+<h3><strong>Example 3:</strong><a class="headerlink" href="#example-3" title="Link to this heading">#</a></h3>
+<p>A company is considering implementing a new reaction in their existing process plant. The reaction takes place in the gas phase and is autocatalytic. The reaction is described by the following expression:</p>
+<p><span class="math notranslate nohighlight">\(A+0.5B → C+D\)</span></p>
+<p>Where the product of the reaction, C, also catalyzes the reaction.</p>
+<p>The feed stream consists of equal amounts of A and B. <span class="math notranslate nohighlight">\(C_{A0} = C_{B0} = 5 kmol/m^3\)</span>. and the flow rate to the reactor is <span class="math notranslate nohighlight">\(v_0 = 10 m^3/h\)</span>. Laboratory experiments have shown that the reaction rate can be described with the following expression:</p>
+<p><span class="math notranslate nohighlight">\(-r_A = k_1C_AC_BC_C \quad [\frac{kmol}{hm^3}]\)</span></p>
+<p>Under the relevant conditions, the rate constant has been determined to be <span class="math notranslate nohighlight">\(k_1 = 0.05 \frac{m^6}{kmol^2 \cdot h}\)</span>. The reaction is carried out under isothermal conditions.</p>
+<p>Question 1.1
+Set up a stoichiometric table for a flow reactor and derive expressions for the concentration of A, B and C as a function of the degree of conversion, X.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="example-4">
+<h3><strong>Example 4:</strong><a class="headerlink" href="#example-4" title="Link to this heading">#</a></h3>
+<p>The reaction</p>
+<p><span class="math notranslate nohighlight">\(3A+ \frac{4}{5}B → \frac{1}{4}C+D\)</span></p>
+<p>takes place in liquid fase. A kinetic study is carried out in a batch reactor at the following operating conditions: the initial concentration of A in the reactor is <span class="math notranslate nohighlight">\(75 mol/m^3\)</span>. There is no C or D in the reactor at the start of the experiment and the temperature is assumed to be constant. A is the limiting reactant and B is present in excess.</p>
+<p>When solving the problem, it can be assumed that there are no volume changes during the reaction.</p>
+<p>Question 2.1.
+Draw up a stoichiometric table and find expressions for <span class="math notranslate nohighlight">\(C_A\)</span> and <span class="math notranslate nohighlight">\(C_D\)</span> as a function of the degree of conversion of A. Plot <span class="math notranslate nohighlight">\(C_A\)</span>, <span class="math notranslate nohighlight">\(C_C\)</span> and <span class="math notranslate nohighlight">\(C_D\)</span> as a function of time.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./WS1\module_3"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="4_stoichiometry_solution.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Stoichiometry - Part 1</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="6_exercise_1.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Operations with SciPy</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goal"><strong>Goal</strong>:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation"><strong>Motivation</strong>:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1"><strong>Example 1:</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2"><strong>Example 2:</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-3"><strong>Example 3:</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-4"><strong>Example 4:</strong></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Adem R.N. Aouichaoui, Carina L. Gargalo and Fiammetta Caccavale
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

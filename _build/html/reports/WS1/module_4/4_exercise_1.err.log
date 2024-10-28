@@ -1,0 +1,33 @@
+Traceback (most recent call last):
+  File "C:\Users\arnaou\AppData\Local\miniconda3\envs\dig4bio\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+  File "C:\Users\arnaou\AppData\Local\miniconda3\envs\dig4bio\Lib\site-packages\nbclient\client.py", line 1314, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\arnaou\AppData\Local\miniconda3\envs\dig4bio\Lib\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\arnaou\AppData\Local\miniconda3\envs\dig4bio\Lib\asyncio\base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\arnaou\AppData\Local\miniconda3\envs\dig4bio\Lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\arnaou\AppData\Local\miniconda3\envs\dig4bio\Lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\arnaou\AppData\Local\miniconda3\envs\dig4bio\Lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# Calculate initial concentration of A and B
+
+C0 = # your code here
+print(f'The initial concentration of A and B is: {C0} mol/m^3')
+------------------
+
+
+[1;36m  Cell [1;32mIn[1], line 3[1;36m[0m
+[1;33m    C0 = # your code here[0m
+[1;37m         ^[0m
+[1;31mSyntaxError[0m[1;31m:[0m invalid syntax
+
+

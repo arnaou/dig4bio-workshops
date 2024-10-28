@@ -21,5 +21,3 @@ with examples of upstreams and downstream process modelling. This course was pro
 |  Module 4    |   design of reactors, combine mass and energy balances |
 |  Module 5    |   Fed-batch model for E.coli (model A)                 |
 |  Module 6&7  |   diafiltration and cell lysis (downstream)            |
-
-

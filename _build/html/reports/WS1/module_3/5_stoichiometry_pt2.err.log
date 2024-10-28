@@ -1,0 +1,83 @@
+Traceback (most recent call last):
+  File "C:\Users\arnaou\AppData\Local\miniconda3\envs\dig4bio\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+  File "C:\Users\arnaou\AppData\Local\miniconda3\envs\dig4bio\Lib\site-packages\nbclient\client.py", line 1314, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\arnaou\AppData\Local\miniconda3\envs\dig4bio\Lib\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\arnaou\AppData\Local\miniconda3\envs\dig4bio\Lib\asyncio\base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\arnaou\AppData\Local\miniconda3\envs\dig4bio\Lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\arnaou\AppData\Local\miniconda3\envs\dig4bio\Lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\arnaou\AppData\Local\miniconda3\envs\dig4bio\Lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# Create a stoichiometric table here
+import pandas as pd
+
+def stoichiometry_equalmolar_reaction(A0, B0):
+    """
+    Function to create the stoichiomatric table for an eualmolar reaction with one reactant (A) and one product (B).
+    Input:
+        A0, B0: initial streams of A and B, respectively, in kmol/m^3.
+    Output:
+        stoichiometry_table (pd.DataFrame): pandas dataframe of the stoichiometric table of the given reaction.
+                                            It contains 5 columns: the species, 
+                                            the number of moles that each species initially presents (feed rate),
+                                            the change in the number of moles brought about by reaction,
+                                            the number of moles after time t (effluent rate),
+                                            the concentration.
+    """
+    # initial cnditions
+    Fj0_A = 'F_A0'
+    Fj0_B = f'{B0}*F_A0'
+    Fj0_T = f'{A0 + B0}*F_A0'
+    
+    # change
+    change_A = '-F_A0*X'
+    change_B = f'{B0/A0}*F_A0*X'
+    change_T = 0
+    
+    # after time t
+    Fj_A = 'F_A0*(1-X)'
+    Fj_B = f'F_A0*({B0}+X)'
+    Fj_T = Fj0_T
+    
+    # concentration
+    Cj_A = 'C_A0*(1-X)'
+    Cj_B = f'C_A0*({B0}+X)'
+    
+    stoichiometry_table = pd.DataFrame()
+    stoichiometry_table['species'] = ['A', 'B', 'T']
+    stoichiometry_table['F_j0'] = [Fj0_A, Fj0_B, Fj0_T]
+    stoichiometry_table['change'] = [change_A, change_B, change_T]
+    stoichiometry_table['F_j'] = [Fj_A, Fj_B, Fj_T]
+    stoichiometry_table['C_j'] = [Cj_A, Cj_B, None]
+    
+    return stoichiometry_table
+    
+stoichiometry_equalmolar_reaction(1, 0.01)
+------------------
+
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Cell [1;32mIn[1], line 2[0m
+[0;32m      1[0m [38;5;66;03m# Create a stoichiometric table here[39;00m
+[1;32m----> 2[0m [38;5;28;01mimport[39;00m [38;5;21;01mpandas[39;00m [38;5;28;01mas[39;00m [38;5;21;01mpd[39;00m
+[0;32m      4[0m [38;5;28;01mdef[39;00m [38;5;21mstoichiometry_equalmolar_reaction[39m(A0, B0):
+[0;32m      5[0m [38;5;250m    [39m[38;5;124;03m"""[39;00m
+[0;32m      6[0m [38;5;124;03m    Function to create the stoichiomatric table for an eualmolar reaction with one reactant (A) and one product (B).[39;00m
+[0;32m      7[0m [38;5;124;03m    Input:[39;00m
+[1;32m   (...)[0m
+[0;32m     15[0m [38;5;124;03m                                            the concentration.[39;00m
+[0;32m     16[0m [38;5;124;03m    """[39;00m
+
+[1;31mModuleNotFoundError[0m: No module named 'pandas'
+
