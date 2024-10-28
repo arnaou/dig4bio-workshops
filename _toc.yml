@@ -4,22 +4,27 @@
 format: jb-book
 root: index
 options:
+  numbered: False
   numbered: false
 parts:
   - caption: Introduction to Python (WS1)
-    numbered: False
     chapters:
     - file: WS1/intro_to_ws1
       title: Introduction to workshop 1
-    - file: WS1/0_python_basics/0_python_basics
-      title: Python Basics
-    - file: WS1/0_python_basics/1_hello_world
-      title: Hello World
-    - file: WS1/0_python_basics/2_statements
-      title: Statements
-    - file: WS1/0_python_basics/3_control_flow
-      title: Control flow
-
+    - file: WS1/module_1/0_python_basics
+      title: Module 1
+      sections:
+      - file: WS1/module_1/1_hello_world
+        title: Hello World
+      - file: WS1/module_1/2_statements
+        title: Statements
+      - file: WS1/module_1/3_control_flow
+        title: Control flow
+      - file: WS1/module_1/4_exercice_1
+        title: Exercice 1
+      - file: WS1/module_1/5_exercice_2
+        title: Exercice 2
+    
   - caption: Model-based Techniques (WS2)
     chapters:
     - file: notebooks

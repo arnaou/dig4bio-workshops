@@ -58,14 +58,14 @@ The Dig4Bio consotrium includes
         height="300" 
         style="display: block; margin: 0 auto" />
 
-
 ## Dates
+The workshops are held in a hybrid format. These are the dates:
 
-| Event | Date |
-|-------|------|
-|       |      |
-|       |      |
-|       |      |
+| Event                      | Date              |
+|----------------------------|-------------------|
+|  Introduction to Python    |   10-12/09/2024   |
+|  Model-based Techniques    |   29-31/10/2024   |
+|  TBA                       |                   |
 
 # Content
 
