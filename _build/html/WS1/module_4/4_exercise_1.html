@@ -202,8 +202,7 @@
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../module_3/0_intro_module_3.html">Module 3</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../module_3/1_operations.html">Operations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../module_3/2_linear_regression.html">Finding the logarithm of a value in Python</a></li>
-
+<li class="toctree-l2"><a class="reference internal" href="../module_3/2_linear_regression.html">Linear Regression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../module_3/3_stoichiometry.html">Stoichiometry (1)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../module_3/4_stoichiometry_solution.html">Stoichiometry (solution)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../module_3/5_stoichiometry_pt2.html">Stoichiometry (2)</a></li>
@@ -221,20 +220,49 @@
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../module_5/0_FedBatch_Ecoli_simulation.html">Module 5</a></li>
-
 <li class="toctree-l1 has-children"><a class="reference internal" href="../module_6/0_intro_module_6.html">Module 6</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../module_6/1_Mass_Transfer.html">Mass transfer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../module_6/2_Diafiltration.html">Diafiltration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../module_6/3_Cell_lysis.html"><strong>Bead mill</strong></a></li>
-
+<li class="toctree-l2"><a class="reference internal" href="../module_6/3_Cell_lysis.html">Cell lysis</a></li>
 </ul>
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model-based Techniques (WS2)</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../notebooks.html">Content with notebooks</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../markdown-notebooks.html">Notebooks with MyST Markdown</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../mymarkdownfile.html">Markdown Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../WS2/intro_to_ws2.html">Introduction to workshop 2</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../WS2/module_1/0_intro_module_1.html">Module 1</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../WS2/module_1/1_Fermentation_Scerevisiae_Lignocellulosic_Batch.html">Mechanistic model of <em>S. cerevisiae</em> utilizing ligocellulosis in batch fermentation</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../WS2/module_1/2_Fermentation_Scerevisiae_Glucose_Aerobic_CSTR.html">Mechanistic model of <em>S. cerevisiae</em> in continous stirred tank reactor under aerobic conditions</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../WS2/module_1/3_Fermentation_MonodHerbert_aerobic.html">Aerobic fermentation model (S. cerevisiae)</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../WS2/module_1/4_FedBatch_Ecoli_simulation_proteinproduction.html">E. coli Fed-batch fermentation model, including recombinant protein production</a></li>
+
+
+
+
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../WS2/module_2/0_intro_module_2.html">Module 2</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../WS2/module_2/1_dd_classification.html">Classification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../WS2/module_2/3_dd_regression.html">Regression</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../WS2/module_3/0_intro_module_3.html">Module 3</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../WS2/module_3/1_hyb_regression.html">Exercise</a></li>
 </ul>
 </details></li>
 </ul>
@@ -465,7 +493,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="problem-b">
+  <section class="tex2jax_ignore mathjax_ignore" id="problem-b">
 <h1>Problem B<a class="headerlink" href="#problem-b" title="Link to this heading">#</a></h1>
 <p>The gas phase reaction A + B → C + D is examined in an ideally stirred batch reactor with a constant volume. At time t = 0 the reactor is rapidly filled with a mixture of equal amounts of A and B at a pressure of 100 kPa and a temperature of 25 °C. After one hour the concentration of A is measured as  <span class="math notranslate nohighlight">\(\frac{C_{A}}{C_{A0}}=0.15\)</span>. The reaction temperature is constant at 25 °C.
 The reaction follows the rate expression:</p>
@@ -501,6 +529,14 @@ The gas can be considered ideal. The gas constant is <span class="math notransla
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="c1"># your code here</span>
+        <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
 </div>
 <p>The activation energy <span class="math notranslate nohighlight">\(E_a\)</span> of the reaction is given by: <span class="math notranslate nohighlight">\(E_a/R=10200 K\)</span></p>
 <p>c) Calculate the rate constant at 100 °C</p>
@@ -518,6 +554,14 @@ The gas can be considered ideal. The gas constant is <span class="math notransla
 <span class="n">T2_kelvin</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">T2</span> <span class="o">+</span> <span class="mf">273.15</span><span class="p">)</span> <span class="c1"># temperature in K</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The rate constant at 100 C is: </span><span class="si">{</span><span class="n">rate_constant_100C</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">Ea_R</span><span class="p">,</span><span class="w"> </span><span class="n">T1_kelvin</span><span class="p">,</span><span class="w"> </span><span class="n">T2_kelvin</span><span class="p">)</span><span class="si">}</span><span class="s1"> m^3/mol*s&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+    <span class="n">k_100</span> <span class="o">=</span> <span class="c1"># your code here</span>
+            <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
 </pre></div>
 </div>
 </div>

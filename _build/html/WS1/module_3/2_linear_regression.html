@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Finding the logarithm of a value in Python &#8212; Dig4Bio-workshops</title>
+    <title>Linear Regression &#8212; Dig4Bio-workshops</title>
   
   
   
@@ -202,8 +202,7 @@
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="0_intro_module_3.html">Module 3</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="1_operations.html">Operations</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Finding the logarithm of a value in Python</a></li>
-
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Linear Regression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3_stoichiometry.html">Stoichiometry (1)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="4_stoichiometry_solution.html">Stoichiometry (solution)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="5_stoichiometry_pt2.html">Stoichiometry (2)</a></li>
@@ -221,20 +220,49 @@
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../module_5/0_FedBatch_Ecoli_simulation.html">Module 5</a></li>
-
 <li class="toctree-l1 has-children"><a class="reference internal" href="../module_6/0_intro_module_6.html">Module 6</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../module_6/1_Mass_Transfer.html">Mass transfer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../module_6/2_Diafiltration.html">Diafiltration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../module_6/3_Cell_lysis.html"><strong>Bead mill</strong></a></li>
-
+<li class="toctree-l2"><a class="reference internal" href="../module_6/3_Cell_lysis.html">Cell lysis</a></li>
 </ul>
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model-based Techniques (WS2)</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../notebooks.html">Content with notebooks</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../markdown-notebooks.html">Notebooks with MyST Markdown</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../mymarkdownfile.html">Markdown Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../WS2/intro_to_ws2.html">Introduction to workshop 2</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../WS2/module_1/0_intro_module_1.html">Module 1</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../WS2/module_1/1_Fermentation_Scerevisiae_Lignocellulosic_Batch.html">Mechanistic model of <em>S. cerevisiae</em> utilizing ligocellulosis in batch fermentation</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../WS2/module_1/2_Fermentation_Scerevisiae_Glucose_Aerobic_CSTR.html">Mechanistic model of <em>S. cerevisiae</em> in continous stirred tank reactor under aerobic conditions</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../WS2/module_1/3_Fermentation_MonodHerbert_aerobic.html">Aerobic fermentation model (S. cerevisiae)</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../WS2/module_1/4_FedBatch_Ecoli_simulation_proteinproduction.html">E. coli Fed-batch fermentation model, including recombinant protein production</a></li>
+
+
+
+
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../WS2/module_2/0_intro_module_2.html">Module 2</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../WS2/module_2/1_dd_classification.html">Classification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../WS2/module_2/3_dd_regression.html">Regression</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../WS2/module_3/0_intro_module_3.html">Module 3</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../WS2/module_3/1_hyb_regression.html">Exercise</a></li>
 </ul>
 </details></li>
 </ul>
@@ -453,7 +481,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Finding the logarithm of a value in Python</h1>
+    <h1>Linear Regression</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -463,10 +491,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Finding the logarithm of a value in Python</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-linear-regression-in-python-with-scipy-library">Simple linear regression in Python with SciPy library</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-the-logarithm-of-a-value-in-python">Finding the logarithm of a value in Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-linear-regression-in-python-with-scipy-library">Simple linear regression in Python with SciPy library</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -477,7 +504,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <p>In this notebook, we will explore some more operations, such as calculating the logarithm in numpy and doing a linear regression.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="linear-regression">
+<h1>Linear Regression<a class="headerlink" href="#linear-regression" title="Link to this heading">#</a></h1>
+<p>In this notebook, we will explore some more operations, such as calculating the logarithm in numpy and doing a linear regression.</p>
 <p>You have the following isothermic reaction:
 <span class="math notranslate nohighlight">\(A+\frac{1}{6}B→\frac{1}{4}C+\frac{1}{2}D\)</span></p>
 <p>During a laboratory experiment you measure in a batch reactor with constant volume and the initial concentration of <span class="math notranslate nohighlight">\(C_A\)</span> is 25 <span class="math notranslate nohighlight">\(mol \cdot m^{-3}\)</span>.</p>
@@ -525,9 +554,21 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">7</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="k">return</span> <span class="n">C_A</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1"># Looking at the stochiometry, we know that CA can be calculated from CC and CA0</span>
+<span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Ca&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">calculate_CA</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Cc&#39;</span><span class="p">])</span>
+
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <section id="finding-the-logarithm-of-a-value-in-python">
-<h1>Finding the logarithm of a value in Python<a class="headerlink" href="#finding-the-logarithm-of-a-value-in-python" title="Link to this heading">#</a></h1>
+<h2>Finding the logarithm of a value in Python<a class="headerlink" href="#finding-the-logarithm-of-a-value-in-python" title="Link to this heading">#</a></h2>
 <p>Here we will use the numpy library to calculate the logarithm of the values defined.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -536,10 +577,21 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># find the log of CA</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;ln(Ca)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Ca&#39;</span><span class="p">]),</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;np&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="simple-linear-regression-in-python-with-scipy-library">
-<h1>Simple linear regression in Python with SciPy library<a class="headerlink" href="#simple-linear-regression-in-python-with-scipy-library" title="Link to this heading">#</a></h1>
+<h2>Simple linear regression in Python with SciPy library<a class="headerlink" href="#simple-linear-regression-in-python-with-scipy-library" title="Link to this heading">#</a></h2>
 <p>Here we calculate a linear least-squares regression for two sets of measurements.
 Check the documentation <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.linregress.html">here</a>.</p>
 <p>The unction returns:</p>
@@ -558,111 +610,15 @@ Check the documentation <a class="reference external" href="https://docs.scipy.o
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Time</th>
-      <th>Cc</th>
-      <th>Ca</th>
-      <th>ln(Ca)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0</td>
-      <td>0.0</td>
-      <td>25.0</td>
-      <td>3.22</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2</td>
-      <td>0.4</td>
-      <td>23.4</td>
-      <td>3.15</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>4</td>
-      <td>0.8</td>
-      <td>21.8</td>
-      <td>3.08</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>6</td>
-      <td>1.2</td>
-      <td>20.2</td>
-      <td>3.01</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>8</td>
-      <td>1.6</td>
-      <td>18.6</td>
-      <td>2.92</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>10</td>
-      <td>2.0</td>
-      <td>17.0</td>
-      <td>2.83</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>12</td>
-      <td>2.4</td>
-      <td>15.4</td>
-      <td>2.73</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>14</td>
-      <td>2.8</td>
-      <td>13.8</td>
-      <td>2.62</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>16</td>
-      <td>3.2</td>
-      <td>12.2</td>
-      <td>2.50</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>18</td>
-      <td>3.6</td>
-      <td>10.6</td>
-      <td>2.36</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>20</td>
-      <td>4.0</td>
-      <td>9.0</td>
-      <td>2.20</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -687,14 +643,19 @@ Check the documentation <a class="reference external" href="https://docs.scipy.o
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
-C:\Users\fiacac\AppData\Local\Temp/ipykernel_15964/2368782444.py:17: UserWarning: Matplotlib is currently using module://matplotlib_inline.backend_inline, which is a non-GUI backend, so cannot show the figure.
-  fig.show()
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;1/Ca&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Ca&#39;</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># linear least-squares regression</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">m</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">r_value</span><span class="p">,</span> <span class="n">p_value</span><span class="p">,</span> <span class="n">std_err</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">linregress</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;1/Ca&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
 </pre></div>
 </div>
-<img alt="../../_images/6df1e05f8e4dd06e501b0eff8cc3ad3559e14cb1a1383bfd5544430c1a6f728e.png" src="../../_images/6df1e05f8e4dd06e501b0eff8cc3ad3559e14cb1a1383bfd5544430c1a6f728e.png" />
 </div>
 </div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -761,10 +722,9 @@ C:\Users\fiacac\AppData\Local\Temp/ipykernel_15964/2368782444.py:17: UserWarning
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Finding the logarithm of a value in Python</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-linear-regression-in-python-with-scipy-library">Simple linear regression in Python with SciPy library</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-the-logarithm-of-a-value-in-python">Finding the logarithm of a value in Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-linear-regression-in-python-with-scipy-library">Simple linear regression in Python with SciPy library</a></li>
 </ul>
-
   </nav></div>
 
 </div></div>

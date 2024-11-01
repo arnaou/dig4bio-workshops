@@ -200,8 +200,7 @@
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../module_3/0_intro_module_3.html">Module 3</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../module_3/1_operations.html">Operations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../module_3/2_linear_regression.html">Finding the logarithm of a value in Python</a></li>
-
+<li class="toctree-l2"><a class="reference internal" href="../module_3/2_linear_regression.html">Linear Regression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../module_3/3_stoichiometry.html">Stoichiometry (1)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../module_3/4_stoichiometry_solution.html">Stoichiometry (solution)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../module_3/5_stoichiometry_pt2.html">Stoichiometry (2)</a></li>
@@ -219,20 +218,49 @@
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../module_5/0_FedBatch_Ecoli_simulation.html">Module 5</a></li>
-
 <li class="toctree-l1 has-children"><a class="reference internal" href="../module_6/0_intro_module_6.html">Module 6</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../module_6/1_Mass_Transfer.html">Mass transfer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../module_6/2_Diafiltration.html">Diafiltration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../module_6/3_Cell_lysis.html"><strong>Bead mill</strong></a></li>
-
+<li class="toctree-l2"><a class="reference internal" href="../module_6/3_Cell_lysis.html">Cell lysis</a></li>
 </ul>
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model-based Techniques (WS2)</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../notebooks.html">Content with notebooks</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../markdown-notebooks.html">Notebooks with MyST Markdown</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../mymarkdownfile.html">Markdown Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../WS2/intro_to_ws2.html">Introduction to workshop 2</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../WS2/module_1/0_intro_module_1.html">Module 1</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../WS2/module_1/1_Fermentation_Scerevisiae_Lignocellulosic_Batch.html">Mechanistic model of <em>S. cerevisiae</em> utilizing ligocellulosis in batch fermentation</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../WS2/module_1/2_Fermentation_Scerevisiae_Glucose_Aerobic_CSTR.html">Mechanistic model of <em>S. cerevisiae</em> in continous stirred tank reactor under aerobic conditions</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../WS2/module_1/3_Fermentation_MonodHerbert_aerobic.html">Aerobic fermentation model (S. cerevisiae)</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../WS2/module_1/4_FedBatch_Ecoli_simulation_proteinproduction.html">E. coli Fed-batch fermentation model, including recombinant protein production</a></li>
+
+
+
+
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../WS2/module_2/0_intro_module_2.html">Module 2</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../WS2/module_2/1_dd_classification.html">Classification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../WS2/module_2/3_dd_regression.html">Regression</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../WS2/module_3/0_intro_module_3.html">Module 3</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../WS2/module_3/1_hyb_regression.html">Exercise</a></li>
 </ul>
 </details></li>
 </ul>
@@ -506,22 +534,126 @@ Here, we will load a .csv file, but you can load Excel, txt, JSON data as well a
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># if you have problems loading the data, provide the full path</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># add the path to where you saved your packed_column.csv here</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># the path should look like this: C:/Users/my_user/Desktop/week02/theory/</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="c1"># use read_csv to lead data from .csv file</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="c1"># here you can see that we provide the encoding and a separator</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="n">packed_column</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;packed_column.csv&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>flow type</th>
+      <th>water flow / air flow</th>
+      <th>0 kg/h</th>
+      <th>100 kg/h</th>
+      <th>200 kg/h</th>
+      <th>300 kg/h</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>small</td>
+      <td>15</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>small</td>
+      <td>30</td>
+      <td>2</td>
+      <td>2</td>
+      <td>5</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>small</td>
+      <td>50</td>
+      <td>2</td>
+      <td>3</td>
+      <td>6</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>small</td>
+      <td>80</td>
+      <td>3</td>
+      <td>4</td>
+      <td>9</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>small</td>
+      <td>100</td>
+      <td>3</td>
+      <td>5</td>
+      <td>13</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>big</td>
+      <td>40</td>
+      <td>5</td>
+      <td>9</td>
+      <td>14</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>big</td>
+      <td>50</td>
+      <td>7</td>
+      <td>14</td>
+      <td>22</td>
+      <td>39</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>big</td>
+      <td>60</td>
+      <td>10</td>
+      <td>19</td>
+      <td>32</td>
+      <td>161</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>big</td>
+      <td>70</td>
+      <td>13</td>
+      <td>27</td>
+      <td>46</td>
+      <td>224</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>big</td>
+      <td>80</td>
+      <td>15</td>
+      <td>34</td>
+      <td>57</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>In the cell above we loaded our DataFrame from a csv file, but what is actually a <em>DataFrame</em>?
 It is basically just a matrix (or table, if you prefer thinking about Excel tables) with rows and columns.</p>

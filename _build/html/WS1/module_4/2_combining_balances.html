@@ -202,8 +202,7 @@
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../module_3/0_intro_module_3.html">Module 3</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../module_3/1_operations.html">Operations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../module_3/2_linear_regression.html">Finding the logarithm of a value in Python</a></li>
-
+<li class="toctree-l2"><a class="reference internal" href="../module_3/2_linear_regression.html">Linear Regression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../module_3/3_stoichiometry.html">Stoichiometry (1)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../module_3/4_stoichiometry_solution.html">Stoichiometry (solution)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../module_3/5_stoichiometry_pt2.html">Stoichiometry (2)</a></li>
@@ -221,20 +220,49 @@
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../module_5/0_FedBatch_Ecoli_simulation.html">Module 5</a></li>
-
 <li class="toctree-l1 has-children"><a class="reference internal" href="../module_6/0_intro_module_6.html">Module 6</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../module_6/1_Mass_Transfer.html">Mass transfer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../module_6/2_Diafiltration.html">Diafiltration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../module_6/3_Cell_lysis.html"><strong>Bead mill</strong></a></li>
-
+<li class="toctree-l2"><a class="reference internal" href="../module_6/3_Cell_lysis.html">Cell lysis</a></li>
 </ul>
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model-based Techniques (WS2)</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../notebooks.html">Content with notebooks</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../markdown-notebooks.html">Notebooks with MyST Markdown</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../mymarkdownfile.html">Markdown Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../WS2/intro_to_ws2.html">Introduction to workshop 2</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../WS2/module_1/0_intro_module_1.html">Module 1</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../WS2/module_1/1_Fermentation_Scerevisiae_Lignocellulosic_Batch.html">Mechanistic model of <em>S. cerevisiae</em> utilizing ligocellulosis in batch fermentation</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../WS2/module_1/2_Fermentation_Scerevisiae_Glucose_Aerobic_CSTR.html">Mechanistic model of <em>S. cerevisiae</em> in continous stirred tank reactor under aerobic conditions</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../WS2/module_1/3_Fermentation_MonodHerbert_aerobic.html">Aerobic fermentation model (S. cerevisiae)</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../WS2/module_1/4_FedBatch_Ecoli_simulation_proteinproduction.html">E. coli Fed-batch fermentation model, including recombinant protein production</a></li>
+
+
+
+
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../WS2/module_2/0_intro_module_2.html">Module 2</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../WS2/module_2/1_dd_classification.html">Classification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../WS2/module_2/3_dd_regression.html">Regression</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../WS2/module_3/0_intro_module_3.html">Module 3</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../WS2/module_3/1_hyb_regression.html">Exercise</a></li>
 </ul>
 </details></li>
 </ul>
@@ -470,8 +498,12 @@ document.write(`
 <p>In this programming exercise you will also have from a chemical engineering point of view the task to develop the energy balance for a batch reactor. This is a task, we have not yet investigated in the lectures or group exercises.
 We consider the following Reaction taking place in a laboratory sized reactor using a liquid phase:</p>
 <p><span class="math notranslate nohighlight">\(A→B\)</span></p>
-<p>The setup is described in the following:
-<img alt="alt text" src="WS1/module_4/assignment2_system.png" /></p>
+<p>The setup is described in the following:</p>
+<p><img src="../../media/WS1/system.png" 
+        alt="Picture" 
+        width="500" 
+        height="500" 
+        style="display: block; margin: 0 auto" /></p>
 <p>You can assume that the reaction order follows an elementary reaction and you have found in literature the rate velocity coefficient at 298 K to be 0.005 min-1.
 Please perform with help the following analysis:</p>
 <ol class="arabic simple">

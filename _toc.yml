@@ -85,14 +85,38 @@ parts:
         title: Diafiltration
       - file: WS1/module_6/3_Cell_lysis
         title: Cell lysis
-        
 ################################################################################
 #                                     Workshop 2
 ################################################################################
   - caption: Model-based Techniques (WS2)
     chapters:
-    - file: notebooks
-    - file: markdown-notebooks
-      sections:
-      - file: mymarkdownfile
-
+        - file: WS2/intro_to_ws2
+          title: Introduction to workshop 2
+        - file: WS2/module_1/0_intro_module_1
+          title: Module 1
+          sections:
+          - file: WS2/module_1/1_Fermentation_Scerevisiae_Lignocellulosic_Batch
+            title: Batch Fermentation
+          - file: WS2/module_1/2_Fermentation_Scerevisiae_Glucose_Aerobic_CSTR
+            title: CSTR
+          - file: WS2/module_1/3_Fermentation_MonodHerbert_aerobic
+            title: Monod-Herbert
+          - file: WS2/module_1/4_FedBatch_Ecoli_simulation_proteinproduction
+            title: Fed-Batch
+        - file: WS2/module_2/0_intro_module_2
+          title: Module 2
+          sections:
+          - file: WS2/module_2/1_dd_classification
+            title: Classification
+          - file: WS2/module2/2_pytorch_tutorial
+            title: Pytorch Tuorial
+          - file: WS2/module_2/3_dd_regression
+            title: Regression
+        - file: WS2/module_3/0_intro_module_3
+          title: Module 3
+          sections:
+          - file: WS2/module_3/1_hyb_regression
+            title: Exercise 
+        #  sections:
+        #  - file: WS1/module_1/5_exercise_2
+        #    title: Exercice 2

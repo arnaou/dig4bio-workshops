@@ -202,8 +202,7 @@
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="0_intro_module_3.html">Module 3</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="1_operations.html">Operations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2_linear_regression.html">Finding the logarithm of a value in Python</a></li>
-
+<li class="toctree-l2"><a class="reference internal" href="2_linear_regression.html">Linear Regression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3_stoichiometry.html">Stoichiometry (1)</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Stoichiometry (solution)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="5_stoichiometry_pt2.html">Stoichiometry (2)</a></li>
@@ -221,20 +220,49 @@
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../module_5/0_FedBatch_Ecoli_simulation.html">Module 5</a></li>
-
 <li class="toctree-l1 has-children"><a class="reference internal" href="../module_6/0_intro_module_6.html">Module 6</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../module_6/1_Mass_Transfer.html">Mass transfer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../module_6/2_Diafiltration.html">Diafiltration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../module_6/3_Cell_lysis.html"><strong>Bead mill</strong></a></li>
-
+<li class="toctree-l2"><a class="reference internal" href="../module_6/3_Cell_lysis.html">Cell lysis</a></li>
 </ul>
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model-based Techniques (WS2)</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../notebooks.html">Content with notebooks</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../markdown-notebooks.html">Notebooks with MyST Markdown</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../mymarkdownfile.html">Markdown Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../WS2/intro_to_ws2.html">Introduction to workshop 2</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../WS2/module_1/0_intro_module_1.html">Module 1</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../WS2/module_1/1_Fermentation_Scerevisiae_Lignocellulosic_Batch.html">Mechanistic model of <em>S. cerevisiae</em> utilizing ligocellulosis in batch fermentation</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../WS2/module_1/2_Fermentation_Scerevisiae_Glucose_Aerobic_CSTR.html">Mechanistic model of <em>S. cerevisiae</em> in continous stirred tank reactor under aerobic conditions</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../WS2/module_1/3_Fermentation_MonodHerbert_aerobic.html">Aerobic fermentation model (S. cerevisiae)</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../WS2/module_1/4_FedBatch_Ecoli_simulation_proteinproduction.html">E. coli Fed-batch fermentation model, including recombinant protein production</a></li>
+
+
+
+
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../WS2/module_2/0_intro_module_2.html">Module 2</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../WS2/module_2/1_dd_classification.html">Classification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../WS2/module_2/3_dd_regression.html">Regression</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../WS2/module_3/0_intro_module_3.html">Module 3</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../WS2/module_3/1_hyb_regression.html">Exercise</a></li>
 </ul>
 </details></li>
 </ul>
@@ -463,9 +491,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mole-mole-calculations-in-python">Mole-mole calculations in Python</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mass-mass-reactions-in-python">Mass-mass reactions in Python</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-balance-coefficients-in-python">How to balance coefficients in Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mole-mole-calculations-in-python">Mole-mole calculations in Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mass-mass-reactions-in-python">Mass-mass reactions in Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-balance-coefficients-in-python">How to balance coefficients in Python</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -558,9 +588,8 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
 <section id="mass-mass-reactions-in-python">
-<h2>Mass-mass reactions in Python<a class="headerlink" href="#mass-mass-reactions-in-python" title="Link to this heading">#</a></h2>
+<h3>Mass-mass reactions in Python<a class="headerlink" href="#mass-mass-reactions-in-python" title="Link to this heading">#</a></h3>
 <p>How many grams of NH_3 is produced if you react 42 g of N_2?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -603,7 +632,7 @@ document.write(`
 </div>
 </section>
 <section id="how-to-balance-coefficients-in-python">
-<h2>How to balance coefficients in Python<a class="headerlink" href="#how-to-balance-coefficients-in-python" title="Link to this heading">#</a></h2>
+<h3>How to balance coefficients in Python<a class="headerlink" href="#how-to-balance-coefficients-in-python" title="Link to this heading">#</a></h3>
 <p>Take some time to investigate and understand the code below.
 Try to take the code apart and verify what each function is doing.
 Once you understand the code, try to see if you can simplify it.</p>
@@ -709,11 +738,21 @@ This is what the following code is doing.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3H2 + 1N2 -&gt; 2NH3
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># assign the found coefficients to the reactants</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">output</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">reactants</span><span class="p">)):</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">output</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="n">coeff</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span><span class="o">+</span><span class="n">reactants</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">reactants</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+
+<span class="ne">NameError</span>: name &#39;reactants&#39; is not defined
 </pre></div>
 </div>
 </div>
 </div>
+</section>
 </section>
 </section>
 
@@ -781,9 +820,11 @@ This is what the following code is doing.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mole-mole-calculations-in-python">Mole-mole calculations in Python</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mass-mass-reactions-in-python">Mass-mass reactions in Python</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-balance-coefficients-in-python">How to balance coefficients in Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mole-mole-calculations-in-python">Mole-mole calculations in Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mass-mass-reactions-in-python">Mass-mass reactions in Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-balance-coefficients-in-python">How to balance coefficients in Python</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
