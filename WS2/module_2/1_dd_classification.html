@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'WS2/module_2/1_dd_classification';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Regression using Data Driven approaches" href="2_dd_regression.html" />
+    <link rel="next" title="Regression using Data Driven approaches" href="3_dd_regression.html" />
     <link rel="prev" title="Data-driven Modelling" href="0_intro_module_2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -228,13 +228,41 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model-based Techniques (WS2)</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../intro_to_ws2.html">Introduction to workshop 2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_1/0_intro_module_1.html">Module 1</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="0_intro_module_2.html">Module 2</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Classification</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2_dd_regression.html">Regression</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module_1/0_intro_module_1.html">Module 1</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../module_1/1_Fermentation_Scerevisiae_Lignocellulosic_Batch.html">Mechanistic model of <em>S. cerevisiae</em> utilizing ligocellulosis in batch fermentation</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../module_1/2_Fermentation_Scerevisiae_Glucose_Aerobic_CSTR.html">Mechanistic model of <em>S. cerevisiae</em> in continous stirred tank reactor under aerobic conditions</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../module_1/3_Fermentation_MonodHerbert_aerobic.html">Aerobic fermentation model (S. cerevisiae)</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../module_1/4_FedBatch_Ecoli_simulation_proteinproduction.html">E. coli Fed-batch fermentation model, including recombinant protein production</a></li>
+
+
+
+
+
+
+
+
+
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../module_3/0_intro_module_3.html">Exercice 1</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="0_intro_module_2.html">Module 2</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Classification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_dd_regression.html">Regression</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../module_3/0_intro_module_3.html">Module 3</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../module_3/1_hyb_regression.html">Exercise</a></li>
+</ul>
+</details></li>
 </ul>
 
     </div>
@@ -438,7 +466,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -454,6 +484,23 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploartory-data-analysis">Exploartory data Analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preprocessing">Data preprocessing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-evaluation">Model evaluation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#improving-performance">Improving Performance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dimentionality-reduction">Dimentionality Reduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#puhsing-performance-even-further-extra">Puhsing performance even further (extra)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notice">Notice:</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -465,7 +512,256 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="classification-using-data-driven-approaches">
 <h1>Classification using Data Driven Approaches<a class="headerlink" href="#classification-using-data-driven-approaches" title="Link to this heading">#</a></h1>
-<p>dsfdsfdsfdsffds</p>
+<section id="objectives">
+<h2>Objectives<a class="headerlink" href="#objectives" title="Link to this heading">#</a></h2>
+<p>In this exercice, we will work with a dataset provided <a class="reference external" href="https://www.kaggle.com/datasets/eddardd/continuous-stirred-tank-reactor-domain-adaptation">here</a>. The aim is to perform fault diagnosis on a CSTR based on the measured signals.</p>
+<p>This datasets contains a set of simulations of a known benchmark in the fault diagnosis for chemical processes community, i.e., the Continuous Stirred Tank Reactor. This system carries an exothermic reaction A -&gt; B, and a feedback loop for controlling the reactor’s temperature. There are 7 measured variables.
+These variables are:</p>
+<ul class="simple">
+<li><p>Concentration of A in the inlet flow,</p></li>
+<li><p>Temperature of the inlet flow,</p></li>
+<li><p>Temperature of the inlet coolant flow,</p></li>
+<li><p>Coolant flow-rate,</p></li>
+<li><p>Concentration of B in the outlet flow,</p></li>
+<li><p>Temperature of the outlet flow,</p></li>
+<li><p>Temperature of the outlet coolant flow.</p></li>
+</ul>
+<p>The goal is to predict a set of 12 faults from these 7 variables, measured throughout 200 minutes, at a 1 minute rate.
+Additional information on the faults can be found in <span id="id1">[<a class="reference internal" href="../../mymarkdownfile.html#id9" title="Eduardo Fernandes Montesuma. Cross-Domain Fault Diagnosis through Optimal Transport. Bachelor's Thesis, Universidade Federal do Ceará, 2021.">Montesuma, 2021</a>, <a class="reference internal" href="../../mymarkdownfile.html#id10" title="Eduardo Fernandes Montesuma, Michela Mulas, Francesco Corona, and Fred Maurice Ngole Mboula. Cross-domain fault diagnosis through optimal transport for a cstr process. IFAC-PapersOnLine, 55(7):946–951, 2022.">Montesuma <em>et al.</em>, 2022</a>]</span>.</p>
+</section>
+<section id="exploartory-data-analysis">
+<h2>Exploartory data Analysis<a class="headerlink" href="#exploartory-data-analysis" title="Link to this heading">#</a></h2>
+<p>The first step is to perform eploratory data analysis (EDA). This includes:</p>
+<ul class="simple">
+<li><p>loading the data</p></li>
+<li><p>convert to a suitable format</p></li>
+<li><p>inspect the dataset (size, content)</p></li>
+<li><p>clean the dataset</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import necessairy packages (hint: numpy, sk-learn, matplotlib, etc.)</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeroes</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># import necessairy packages (hint: numpy, sk-learn, matplotlib, etc.)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeroes</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+
+<span class="nn">File ~\AppData\Local\miniconda3\envs\aimbio\lib\site-packages\numpy\__init__.py:320,</span> in <span class="ni">__getattr__</span><span class="nt">(attr)</span>
+<span class="g g-Whitespace">    </span><span class="mi">317</span>     <span class="kn">from</span> <span class="nn">.testing</span> <span class="kn">import</span> <span class="n">Tester</span>
+<span class="g g-Whitespace">    </span><span class="mi">318</span>     <span class="k">return</span> <span class="n">Tester</span>
+<span class="ne">--&gt; </span><span class="mi">320</span> <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s2">&quot;module </span><span class="si">{!r}</span><span class="s2"> has no attribute &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">321</span>                      <span class="s2">&quot;</span><span class="si">{!r}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">attr</span><span class="p">))</span>
+
+<span class="ne">AttributeError</span>: module &#39;numpy&#39; has no attribute &#39;zeroes&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load the dataset (hint....numpy)</span>
+
+<span class="c1"># convert to pandas dataframe (much nicer visuals)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># inspect the dataset (hint: show the top 10 rows)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>the last 4 columns contain the following data:</p>
+<ul class="simple">
+<li><p>Column 1400 refers to the Fault.</p></li>
+<li><p>Column 1401 refers to the domain level</p></li>
+<li><p>Column 1402 refers to the noise level</p></li>
+<li><p>Column 1403 refers to the reaction order</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># extract the data e.g. fault_label=df.iloc[:,-4]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># investigate the uniqueness of the domains</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># investigate the uniqueness of the faults</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># investigate the uniqueness of the parameter noise</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># investigate the uniqueness of the reaction order</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># investigate how these uniques values are associated in each domain, is there some exlusivity?</span>
+
+<span class="c1">#for domain in np.unique(domain_label):</span>
+<span class="c1">#    domain_parameters = np.where(domain_label == domain)[0]</span>
+<span class="c1">#    print(f&#39;The domain {domain} has a noise level of {np.unique(parameter_noise[domain_parameters]).item()} and a reaction order of {np.unique(reaction_order[domain_parameters]).item()}&#39;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="data-preprocessing">
+<h2>Data preprocessing<a class="headerlink" href="#data-preprocessing" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># split the data into features and target</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># split the data into training, validation and test</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="model-evaluation">
+<h2>Model evaluation<a class="headerlink" href="#model-evaluation" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># crate a function for evaluating various classification model</span>
+
+<span class="c1">#def predictions(classifier, X_train, y_train, X_test, y_test, model_name):</span>
+<span class="c1">#    classifier.fit(X_train, y_train)</span>
+<span class="c1">#    print(classifier.score(X_test, y_test))</span>
+
+<span class="c1">#    cm = confusion_matrix(classifier.predict(X_test), y_test)</span>
+<span class="c1">#    sns.heatmap(cm, annot=True, cmap=&#39;viridis&#39;)</span>
+<span class="c1">#    plt.title(f&#39;Confusion matrix for {model_name}&#39;)</span>
+<span class="c1">#    plt.show()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>With the current data, train and validate the following models:</p>
+<ul class="simple">
+<li><p>SVC</p></li>
+<li><p>DecisionTree</p></li>
+<li><p>RF</p></li>
+<li><p>XGB</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># SVC</span>
+<span class="c1">#print(&#39;SVC&#39;)</span>
+<span class="c1">#predictions(SVC(random_state=2207, probability=True), X_train, y_train, X_val, y_val, model_name=&#39;SVC&#39;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="improving-performance">
+<h2>Improving Performance<a class="headerlink" href="#improving-performance" title="Link to this heading">#</a></h2>
+<p>Inspect the data again, have you noticed anything?
+are all variable of the same scale?
+If not, then scale them.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># scale the data (hint: StandardScaler())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Retrain the models. how is the accuracy compared to previousely?</p>
+</section>
+<section id="dimentionality-reduction">
+<h2>Dimentionality Reduction<a class="headerlink" href="#dimentionality-reduction" title="Link to this heading">#</a></h2>
+<p>A total of 1400 features are used. A question would be, is that really necessairy?
+Try to use PCA to reduce the number of features.
+and hpow much reduction is acceptable (see scree tree)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Perform PCA (e.g. with variance threshhold of 0.956)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># find the threshold and select the data</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Scale the data (again)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># retrain the models</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="puhsing-performance-even-further-extra">
+<h2>Puhsing performance even further (extra)<a class="headerlink" href="#puhsing-performance-even-further-extra" title="Link to this heading">#</a></h2>
+<p>the models used so far relied on the default hyperparameters.
+Investigate the documentation of one model and create a grid search.
+Find the best combination of hyperparameters</p>
+<section id="notice">
+<h3>Notice:<a class="headerlink" href="#notice" title="Link to this heading">#</a></h3>
+<p>Thanks to XXX and XXXX for contributing to the development of the solution</p>
+<div class="docutils container" id="id2">
+<div role="list" class="citation-list">
+<div class="citation" id="id3" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>HdHPK14<span class="fn-bracket">]</span></span>
+<p>Christopher Ramsay Holdgraf, Wendy de Heer, Brian N. Pasley, and Robert T. Knight. Evidence for Predictive Coding in Human Auditory Cortex. In <em>International Conference on Cognitive Neuroscience</em>. Brisbane, Australia, Australia, 2014. Frontiers in Neuroscience.</p>
+</div>
+<div class="citation" id="id9" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">Mon21</a><span class="fn-bracket">]</span></span>
+<p>Eduardo Fernandes Montesuma. <em>Cross-Domain Fault Diagnosis through Optimal Transport</em>. Bachelor's Thesis, Universidade Federal do Ceará, 2021.</p>
+</div>
+<div class="citation" id="id10" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">MMCM22</a><span class="fn-bracket">]</span></span>
+<p>Eduardo Fernandes Montesuma, Michela Mulas, Francesco Corona, and Fred Maurice Ngole Mboula. Cross-domain fault diagnosis through optimal transport for a cstr process. <em>IFAC-PapersOnLine</em>, 55(7):946–951, 2022.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -477,16 +773,16 @@ document.write(`
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "aimbio"
         },
         kernelOptions: {
-            name: "python3",
+            name: "aimbio",
             path: "./WS2\module_2"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'aimbio'</script>
 
                 </article>
               
@@ -508,7 +804,7 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="2_dd_regression.html"
+       href="3_dd_regression.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
@@ -522,6 +818,30 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploartory-data-analysis">Exploartory data Analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preprocessing">Data preprocessing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-evaluation">Model evaluation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#improving-performance">Improving Performance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dimentionality-reduction">Dimentionality Reduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#puhsing-performance-even-further-extra">Puhsing performance even further (extra)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notice">Notice:</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
