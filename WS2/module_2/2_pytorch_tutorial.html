@@ -60,6 +60,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'WS2/module_2/2_pytorch_tutorial';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Regression using Data Driven approaches" href="3_dd_regression.html" />
+    <link rel="prev" title="Classification using Data Driven Approaches" href="1_dd_classification.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -121,8 +123,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -226,7 +226,7 @@
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model-based Techniques (WS2)</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../intro_to_ws2.html">Introduction to workshop 2</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../module_1/0_intro_module_1.html">Module 1</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../module_1/1_Fermentation_Scerevisiae_Lignocellulosic_Batch.html">Mechanistic model of <em>S. cerevisiae</em> utilizing ligocellulosis in batch fermentation</a></li>
@@ -254,8 +254,9 @@
 
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="0_intro_module_2.html">Module 2</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="0_intro_module_2.html">Module 2</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="1_dd_classification.html">Classification</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Pytorch Tuorial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3_dd_regression.html">Regression</a></li>
 </ul>
 </details></li>
@@ -771,22 +772,25 @@ The true relationship is: y = 2.5x + sin(x) + noise</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 0: Train Loss = 48.6153, Val Loss = 41.8169
-Epoch 10: Train Loss = 0.2252, Val Loss = 0.4560
-Epoch 20: Train Loss = 0.1035, Val Loss = 0.1433
-Epoch 30: Train Loss = 0.0848, Val Loss = 0.1144
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 0: Train Loss = 48.7267, Val Loss = 45.3895
+Epoch 10: Train Loss = 0.2846, Val Loss = 0.1482
+Epoch 20: Train Loss = 0.0872, Val Loss = 0.1037
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 40: Train Loss = 0.0653, Val Loss = 0.0906
-Epoch 50: Train Loss = 0.0516, Val Loss = 0.0735
-Epoch 60: Train Loss = 0.0482, Val Loss = 0.0600
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 30: Train Loss = 0.0676, Val Loss = 0.0645
+Epoch 40: Train Loss = 0.0530, Val Loss = 0.0498
+Epoch 50: Train Loss = 0.0488, Val Loss = 0.0478
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 70: Train Loss = 0.0398, Val Loss = 0.0514
-Epoch 80: Train Loss = 0.0376, Val Loss = 0.0505
-Epoch 90: Train Loss = 0.0369, Val Loss = 0.0478
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 60: Train Loss = 0.0423, Val Loss = 0.0437
+Epoch 70: Train Loss = 0.0420, Val Loss = 0.0418
+Epoch 80: Train Loss = 0.0384, Val Loss = 0.0397
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 90: Train Loss = 0.0428, Val Loss = 0.0392
+Early stopping triggered at epoch 94
 
-Test Loss: 0.0503
+Test Loss: 0.0354
 </pre></div>
 </div>
 </div>
@@ -842,7 +846,7 @@ Test Loss: 0.0503
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/4fdc3c91e9aaee42296307b21abd07f7f0757761ac3586ec06946115f54b8e13.png" src="../../_images/4fdc3c91e9aaee42296307b21abd07f7f0757761ac3586ec06946115f54b8e13.png" />
+<img alt="../../_images/243ad88cb94fc7d0533cf77f0f420d371812b30388ad52e235868da5d5bd03de.png" src="../../_images/243ad88cb94fc7d0533cf77f0f420d371812b30388ad52e235868da5d5bd03de.png" />
 </div>
 </div>
 </section>
@@ -890,6 +894,24 @@ Test Loss: 0.0503
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="1_dd_classification.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Classification using Data Driven Approaches</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="3_dd_regression.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Regression using Data Driven approaches</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
