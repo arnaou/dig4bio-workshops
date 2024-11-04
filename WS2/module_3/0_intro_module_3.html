@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Hybrid Modelling &#8212; Dig4Bio-workshops</title>
+    <title>Hybrid Modeling in Process Engineering: A Comprehensive Guide &#8212; Dig4Bio-workshops</title>
   
   
   
@@ -469,7 +469,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -480,11 +482,51 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Hybrid Modelling</h1>
+    <h1>Hybrid Modeling in Process Engineering: A Comprehensive Guide</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-hybrid-modeling">1. Introduction to Hybrid Modeling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-hybrid-modeling">1.1 What is Hybrid Modeling?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-use-hybrid-models">1.2 Why Use Hybrid Models?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-hybrid-models">2. Types of Hybrid Models</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-hybrid-models">2.1 Parallel Hybrid Models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#serial-hybrid-models">2.2 Serial Hybrid Models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#embedded-hybrid-models">2.3 Embedded Hybrid Models</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#development-methodology">4. Development Methodology</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-analysis">4.1 Problem Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-structure-selection">4.2 Model Structure Selection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-development-steps">4.3 Model Development Steps</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation-challenges">5. Implementation Challenges</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#technical-challenges">5.1 Technical Challenges</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-challenges">5.2 Practical Challenges</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#future-trends">7. Future Trends</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#emerging-technologies">7.1 Emerging Technologies</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#research-directions">7.2 Research Directions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practices-and-guidelines">8. Best Practices and Guidelines</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#development-best-practices">8.1 Development Best Practices</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation-guidelines">8.2 Implementation Guidelines</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -494,8 +536,200 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="hybrid-modelling">
-<h1>Hybrid Modelling<a class="headerlink" href="#hybrid-modelling" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="hybrid-modeling-in-process-engineering-a-comprehensive-guide">
+<h1>Hybrid Modeling in Process Engineering: A Comprehensive Guide<a class="headerlink" href="#hybrid-modeling-in-process-engineering-a-comprehensive-guide" title="Link to this heading">#</a></h1>
+<section id="introduction-to-hybrid-modeling">
+<h2>1. Introduction to Hybrid Modeling<a class="headerlink" href="#introduction-to-hybrid-modeling" title="Link to this heading">#</a></h2>
+<section id="what-is-hybrid-modeling">
+<h3>1.1 What is Hybrid Modeling?<a class="headerlink" href="#what-is-hybrid-modeling" title="Link to this heading">#</a></h3>
+<p>Hybrid modeling combines first-principles (mechanistic) models with data-driven approaches to create more accurate and robust process models. This approach leverages both theoretical understanding and empirical observations to overcome the limitations of each individual method.</p>
+</section>
+<section id="why-use-hybrid-models">
+<h3>1.2 Why Use Hybrid Models?<a class="headerlink" href="#why-use-hybrid-models" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>First-principles limitations:</strong></p>
+<ul>
+<li><p>Incomplete understanding of complex phenomena</p></li>
+<li><p>Difficulty in modeling unknown interactions</p></li>
+<li><p>Computational complexity for detailed models</p></li>
+<li><p>Parameter uncertainty</p></li>
+</ul>
+</li>
+<li><p><strong>Data-driven limitations:</strong></p>
+<ul>
+<li><p>Require large amounts of data</p></li>
+<li><p>Poor extrapolation capabilities</p></li>
+<li><p>Lack physical insights</p></li>
+<li><p>May violate physical constraints</p></li>
+</ul>
+</li>
+<li><p><strong>Hybrid advantages:</strong></p>
+<ul>
+<li><p>Combines theoretical knowledge with empirical data</p></li>
+<li><p>Reduces data requirements</p></li>
+<li><p>Maintains physical meaning</p></li>
+<li><p>Improves extrapolation</p></li>
+<li><p>Handles complex, nonlinear systems</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="types-of-hybrid-models">
+<h2>2. Types of Hybrid Models<a class="headerlink" href="#types-of-hybrid-models" title="Link to this heading">#</a></h2>
+<section id="parallel-hybrid-models">
+<h3>2.1 Parallel Hybrid Models<a class="headerlink" href="#parallel-hybrid-models" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>First-principles and data-driven models run independently</p></li>
+<li><p>Outputs are combined using weighted averaging or switching logic</p></li>
+<li><p>Useful when different modeling approaches excel in different operating regions</p></li>
+</ul>
+</section>
+<section id="serial-hybrid-models">
+<h3>2.2 Serial Hybrid Models<a class="headerlink" href="#serial-hybrid-models" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>One model’s output becomes input to the other</p></li>
+<li><p>Common configurations:</p>
+<ul>
+<li><p>Data-driven model corrects first-principles predictions</p></li>
+<li><p>First-principles model provides inputs to data-driven model</p></li>
+<li><p>Data-driven model estimates parameters for first-principles model</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="embedded-hybrid-models">
+<h3>2.3 Embedded Hybrid Models<a class="headerlink" href="#embedded-hybrid-models" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Data-driven components embedded within first-principles framework</p></li>
+<li><p>Examples:</p>
+<ul>
+<li><p>Neural networks estimating reaction kinetics</p></li>
+<li><p>Machine learning models predicting physical properties</p></li>
+<li><p>Statistical models estimating unmeasured variables</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="development-methodology">
+<h2>4. Development Methodology<a class="headerlink" href="#development-methodology" title="Link to this heading">#</a></h2>
+<section id="problem-analysis">
+<h3>4.1 Problem Analysis<a class="headerlink" href="#problem-analysis" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Identify system boundaries</p></li>
+<li><p>Define key variables and parameters</p></li>
+<li><p>Assess available data and quality</p></li>
+<li><p>Determine modeling objectives</p></li>
+<li><p>Evaluate existing models</p></li>
+</ol>
+</section>
+<section id="model-structure-selection">
+<h3>4.2 Model Structure Selection<a class="headerlink" href="#model-structure-selection" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>First-principles component:</strong></p>
+<ul>
+<li><p>Mass and energy balances</p></li>
+<li><p>Known physical relationships</p></li>
+<li><p>Equipment constraints</p></li>
+<li><p>Operating limits</p></li>
+</ul>
+</li>
+<li><p><strong>Data-driven component:</strong></p>
+<ul>
+<li><p>Choose appropriate algorithm</p></li>
+<li><p>Define input-output structure</p></li>
+<li><p>Select relevant features</p></li>
+<li><p>Determine model complexity</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="model-development-steps">
+<h3>4.3 Model Development Steps<a class="headerlink" href="#model-development-steps" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Develop first-principles model</p></li>
+<li><p>Identify model inadequacies</p></li>
+<li><p>Design data-driven component</p></li>
+<li><p>Integration strategy</p></li>
+<li><p>Parameter estimation</p></li>
+<li><p>Validation methodology</p></li>
+</ol>
+</section>
+</section>
+<section id="implementation-challenges">
+<h2>5. Implementation Challenges<a class="headerlink" href="#implementation-challenges" title="Link to this heading">#</a></h2>
+<section id="technical-challenges">
+<h3>5.1 Technical Challenges<a class="headerlink" href="#technical-challenges" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Parameter estimation complexity</p></li>
+<li><p>Computational requirements</p></li>
+<li><p>Integration of different time scales</p></li>
+<li><p>Handling model transitions</p></li>
+<li><p>Ensuring numerical stability</p></li>
+</ul>
+</section>
+<section id="practical-challenges">
+<h3>5.2 Practical Challenges<a class="headerlink" href="#practical-challenges" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Data availability and quality</p></li>
+<li><p>Model maintenance</p></li>
+<li><p>User acceptance</p></li>
+<li><p>Training requirements</p></li>
+<li><p>Software integration</p></li>
+</ul>
+</section>
+</section>
+<section id="future-trends">
+<h2>7. Future Trends<a class="headerlink" href="#future-trends" title="Link to this heading">#</a></h2>
+<section id="emerging-technologies">
+<h3>7.1 Emerging Technologies<a class="headerlink" href="#emerging-technologies" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Physics-informed neural networks</p></li>
+<li><p>Automated model development</p></li>
+<li><p>Real-time adaptation</p></li>
+<li><p>Edge computing integration</p></li>
+<li><p>Digital twin applications</p></li>
+</ul>
+</section>
+<section id="research-directions">
+<h3>7.2 Research Directions<a class="headerlink" href="#research-directions" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Multi-scale modeling</p></li>
+<li><p>Uncertainty quantification</p></li>
+<li><p>Automated feature selection</p></li>
+<li><p>Transfer learning applications</p></li>
+<li><p>Explainable AI integration</p></li>
+</ul>
+</section>
+</section>
+<section id="best-practices-and-guidelines">
+<h2>8. Best Practices and Guidelines<a class="headerlink" href="#best-practices-and-guidelines" title="Link to this heading">#</a></h2>
+<section id="development-best-practices">
+<h3>8.1 Development Best Practices<a class="headerlink" href="#development-best-practices" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Start with simple models</p></li>
+<li><p>Incrementally add complexity</p></li>
+<li><p>Validate at each step</p></li>
+<li><p>Document assumptions</p></li>
+<li><p>Maintain physical meaning</p></li>
+</ol>
+</section>
+<section id="implementation-guidelines">
+<h3>8.2 Implementation Guidelines<a class="headerlink" href="#implementation-guidelines" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Clear scope definition</p></li>
+<li><p>Systematic development approach</p></li>
+<li><p>Rigorous testing protocol</p></li>
+<li><p>User involvement</p></li>
+<li><p>Continuous improvement process</p></li>
+</ul>
+</section>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<p>Hybrid modeling represents a powerful approach for process engineering applications, combining the best aspects of first-principles and data-driven methods. Success requires careful consideration of model structure, data requirements, and implementation challenges. Regular maintenance and updates ensure continued model effectiveness.</p>
+</section>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -509,16 +743,16 @@ document.write(`
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "mleep"
         },
         kernelOptions: {
-            name: "python3",
+            name: "mleep",
             path: "./WS2\module_3"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'mleep'</script>
 
                 </article>
               
@@ -554,6 +788,53 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-hybrid-modeling">1. Introduction to Hybrid Modeling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-hybrid-modeling">1.1 What is Hybrid Modeling?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-use-hybrid-models">1.2 Why Use Hybrid Models?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-hybrid-models">2. Types of Hybrid Models</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-hybrid-models">2.1 Parallel Hybrid Models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#serial-hybrid-models">2.2 Serial Hybrid Models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#embedded-hybrid-models">2.3 Embedded Hybrid Models</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#development-methodology">4. Development Methodology</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-analysis">4.1 Problem Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-structure-selection">4.2 Model Structure Selection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-development-steps">4.3 Model Development Steps</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation-challenges">5. Implementation Challenges</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#technical-challenges">5.1 Technical Challenges</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-challenges">5.2 Practical Challenges</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#future-trends">7. Future Trends</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#emerging-technologies">7.1 Emerging Technologies</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#research-directions">7.2 Research Directions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practices-and-guidelines">8. Best Practices and Guidelines</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#development-best-practices">8.1 Development Best Practices</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation-guidelines">8.2 Implementation Guidelines</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
